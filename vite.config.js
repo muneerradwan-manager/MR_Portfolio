@@ -10,5 +10,5 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/muneer_radwan_portfolio/',
+  base: '/MR_Portfolio/',
 })
