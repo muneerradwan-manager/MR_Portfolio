@@ -54,16 +54,25 @@ const Projects = () => {
                 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full flex flex-col">
-                  {/* Project Image Placeholder */}
-                  <div className="relative h-48 bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-600 dark:to-primary-800 overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-white text-6xl font-bold opacity-20">
-                        {project.title.charAt(0)}
+                <Card className="h-full flex flex-col overflow-hidden">
+                  {/* Project Cover */}
+                  <div className="relative h-48">
+                    {project.screenshots?.length ? (
+                      <img
+                        src={project.screenshots[0]}
+                        alt={`${project.title} preview`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="h-full w-full bg-gradient-to-br from-primary-400 to-primary-600 dark:from-primary-600 dark:to-primary-800 flex items-center justify-center">
+                        <div className="text-white text-6xl font-bold opacity-20">
+                          {project.title.charAt(0)}
+                        </div>
                       </div>
-                    </div>
+                    )}
                     {project.featured && (
-                      <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">
+                      <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                         Featured
                       </div>
                     )}
