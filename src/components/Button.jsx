@@ -8,7 +8,8 @@ const Button = ({ children, to, href, variant = 'primary', className = '', onCli
     primary: 'bg-primary-600 hover:bg-primary-700 text-white focus:ring-primary-500 shadow-lg hover:shadow-xl',
     secondary: 'bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100 focus:ring-gray-500',
     outline: 'border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500',
-    ghost: 'text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 focus:ring-primary-500'
+    ghost: 'text-primary-600 hover:bg-primary-50 dark:hover:bg-primary-900/20 focus:ring-primary-500',
+    glass: 'bg-white/90 text-gray-900 hover:bg-white shadow-xl hover:shadow-2xl focus:ring-white/70 focus:ring-offset-0',
   };
 
   const classes = `${baseClasses} ${variants[variant]} ${className}`;

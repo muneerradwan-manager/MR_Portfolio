@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: 7,
+    id: 1,
     title: "MedTour.sy",
     slug: "medtour",
     tagline: "Medical tourism OS for patients, partners, and coordinators",
@@ -8,20 +8,19 @@ export const projects = [
     description:
       "MedTour.sy delivers a premium landing experience that guides medical travelers through the brand story, curated services, logistics support, and call-to-action moments. The public hero screens highlight hero narratives, modular sections for services, how-it-works flows, testimonials, multilingual content, and CTA cards that route visitors to coordinators, reflecting a cohesive marketing-to-product journey.",
     technologies: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "flutter_bloc",
-      "Riverpod",
-      "Dio",
-      "GetIt",
       "cached_network_image",
+      "dartz",
       "device_info_plus",
+      "device_preview",
+      "dio",
       "dropdown_search",
       "file_picker",
+      "flutter_bloc",
+      "flutter_localizations",
       "flutter_svg",
       "font_awesome_flutter",
       "free_map",
+      "get_it",
       "iconsax",
       "intl",
       "permission_handler",
@@ -32,6 +31,9 @@ export const projects = [
       "shimmer",
       "url_launcher",
       "window_manager",
+      "Cairo fonts",
+      "Manrope fonts",
+      "Poppins fonts",
       "Stripe API",
     ],
     brand: {
@@ -50,15 +52,15 @@ export const projects = [
     ],
     links: [
       {
-        label: "Google Play",
-        type: "playstore",
-        href: "https://play.google.com/store/apps/details?id=com.medtour.sy",
+        label: "Visit Website",
+        type: "web",
+        href: "https://medtour.sy/",
       },
     ],
     metrics: [
       { label: "User Roles", value: "5 personas" },
       { label: "Languages", value: "11 locales" },
-      { label: "Platforms", value: "iOS · Android · Web · Desktop" },
+      { label: "Platforms", value: "iOS · Android" },
     ],
     deliverables: [
       "Marketing landing experience",
@@ -120,7 +122,8 @@ export const projects = [
       userRoles: [
         {
           name: "Admin",
-          summary: "Full control over people, permissions, and platform content.",
+          summary:
+            "Full control over people, permissions, and platform content.",
           capabilities: [
             "Cross-platform dashboard with live KPIs",
             "User, role, and permission lifecycle management",
@@ -129,7 +132,8 @@ export const projects = [
         },
         {
           name: "Center Owner",
-          summary: "Manages clinics, doctors, departments, and medical services.",
+          summary:
+            "Manages clinics, doctors, departments, and medical services.",
           capabilities: [
             "Center profile creation, photo galleries, and working hours",
             "Doctor, department, service, and equipment catalogs",
@@ -138,7 +142,8 @@ export const projects = [
         },
         {
           name: "Hotel Owner",
-          summary: "Operates hospitality inventory tightly linked to medical trips.",
+          summary:
+            "Operates hospitality inventory tightly linked to medical trips.",
           capabilities: [
             "Hotel profiles with licensing proof and amenity controls",
             "Room-type templates, pricing, and per-room availability",
@@ -199,93 +204,180 @@ export const projects = [
     featured: true,
   },
   {
-    id: 1,
-    title: "E-Commerce Flutter App",
-    slug: "ecommerce-flutter",
-    description:
-      "A full-featured e-commerce mobile application built with Flutter, featuring product catalog, shopping cart, user authentication, and payment integration. Includes real-time inventory management and order tracking.",
-    technologies: ["Flutter", "Dart", "Firebase", "Provider", "Stripe API"],
-    screenshots: [
-      "/screenshots/ecommerce-1.jpg",
-      "/screenshots/ecommerce-2.jpg",
-      "/screenshots/ecommerce-3.jpg",
-    ],
-    links: [
-      {
-        label: "Google Play",
-        type: "playstore",
-        href: "https://play.google.com/store/apps/details?id=com.example.ecommerce",
-      },
-    ],
-    featured: true,
-  },
-  {
     id: 2,
-    title: "Weather Forecast App",
-    slug: "weather-forecast",
+    title: "OVACS Mobile Suite",
+    slug: "ovacs",
+    tagline:
+      "One command center for coordinators, case managers, and clinicians",
+    industry: "Healthcare Operations / Care Coordination",
     description:
-      "Beautiful weather application with location-based forecasts, detailed weather maps, and customizable widgets. Features include 7-day forecasts, hourly predictions, and weather alerts.",
-    technologies: ["Flutter", "Dart", "REST API", "Provider", "Geolocator"],
-    screenshots: ["/screenshots/weather-1.jpg", "/screenshots/weather-2.jpg"],
-    links: [],
-    featured: true,
-  },
-  {
-    id: 3,
-    title: "Task Management App",
-    slug: "task-manager",
-    description:
-      "Productive task management app with team collaboration features. Includes project boards, task assignments, deadlines, notifications, and progress tracking with beautiful UI/UX.",
-    technologies: ["Flutter", "Dart", "Firebase", "Bloc", "Cloud Firestore"],
-    screenshots: [
-      "/screenshots/task-1.jpg",
-      "/screenshots/task-2.jpg",
-      "/screenshots/task-3.jpg",
+      "OVACS is a cross-platform Flutter workspace built for regulated care teams. It unifies onboarding, dashboards, clients, cases, sessions, documents, messaging, and compliance workflows so coordinators, case managers, and clinicians can run the entire practice without bouncing between tools.",
+    technologies: [
+      "Dartz",
+      "Dio",
+      "Equatable",
+      "file_picker",
+      "flutter_bloc",
+      "flutter_secure_storage",
+      "path_provider",
+      "get_it",
+      "iconsax",
+      "json_annotation",
+      "permission_handler",
+      "url_launcher",
+      "intl",
+      "flutter_svg",
+      "pinput",
+      "device_preview",
+      "flex_color_picker",
+      "shimmer",
+      "open_filex",
+      "share_plus",
+      "record",
+      "just_audio",
+      "firebase_core",
+      "firebase_messaging",
+      "flutter_local_notifications",
+      "Cairo font family",
     ],
-    links: [],
-    featured: false,
-  },
-  {
-    id: 4,
-    title: "Social Media App",
-    slug: "social-media",
-    description:
-      "Modern social media platform with real-time messaging, story features, post sharing, and user profiles. Built with scalable architecture and optimized performance.",
-    technologies: ["Flutter", "Dart", "Firebase", "Riverpod", "WebRTC"],
-    screenshots: ["/screenshots/social-1.jpg", "/screenshots/social-2.jpg"],
+    brand: {
+      accent: "#0F6E8C",
+      logo: null,
+      icon: null,
+    },
+    screenshots: [],
     links: [
       {
-        label: "Google Play",
-        type: "playstore",
-        href: "https://play.google.com/store/apps/details?id=com.example.social",
+        label: "Visit Website",
+        type: "web",
+        href: "https://ovacs.com/",
       },
     ],
-    featured: true,
-  },
-  {
-    id: 5,
-    title: "Fitness Tracker",
-    slug: "fitness-tracker",
-    description:
-      "Comprehensive fitness tracking application with workout plans, progress charts, calorie counter, and integration with wearable devices. Features beautiful animations and intuitive navigation.",
-    technologies: ["Flutter", "Dart", "SQLite", "Provider", "Charts"],
-    screenshots: [
-      "/screenshots/fitness-1.jpg",
-      "/screenshots/fitness-2.jpg",
-      "/screenshots/fitness-3.jpg",
+    metrics: [
+      { label: "Core Modules", value: "10+" },
+      { label: "Channels", value: "Push · Email · SMS" },
+      { label: "Platforms", value: "iOS · Android · Tablet" },
     ],
-    links: [],
-    featured: false,
-  },
-  {
-    id: 6,
-    title: "News Reader App",
-    slug: "news-reader",
-    description:
-      "Clean and modern news aggregator with multiple sources, categories, bookmarking, and offline reading capabilities. Features dark mode and customizable reading experience.",
-    technologies: ["Flutter", "Dart", "REST API", "Hive", "GetX"],
-    screenshots: ["/screenshots/news-1.jpg", "/screenshots/news-2.jpg"],
-    links: [],
-    featured: false,
+    deliverables: [
+      "Role-aware mobile suite",
+      "Modular CRUD workspaces",
+      "QA + compliance documentation",
+    ],
+    caseStudy: {
+      summary: [
+        {
+          title: "Challenge",
+          body: "Care teams juggled disconnected tools for clients, cases, messaging, and compliance, creating context switching, audit gaps, and onboarding drag for new staff.",
+        },
+        {
+          title: "Solution",
+          body: "Designed OVACS as a guided Flutter suite with shared navigation, reusable CRUD patterns, and opinionated QA checklists so every module behaves consistently while staying HIPAA-ready.",
+        },
+      ],
+      highlights: [
+        {
+          title: "First-time entry playbook",
+          description:
+            "Splash → onboarding carousel → multi-option sign-in with SSO, guest tenants, and granular validation keeps the first-run experience on-brand and secure.",
+        },
+        {
+          title: "Dashboard telling the whole story",
+          description:
+            "KPIs, smart feed, quick search, and contextual FAB shortcuts launch users into the right module with filters already applied.",
+        },
+        {
+          title: "Universal CRUD rails",
+          description:
+            "Every module mirrors the list → filter → detail → action rhythm, so QA, product, and engineering speak the same language across Connections, Clients, Cases, Sessions, and more.",
+        },
+      ],
+      userJourney: [
+        {
+          title: "Splash & Onboarding",
+          steps: [
+            "Branded splash loads DI, localization, and theme tokens.",
+            "First launch shows onboarding carousel plus notification opt-in.",
+          ],
+        },
+        {
+          title: "Authentication Center",
+          steps: [
+            "Sign-in supports email/password, SSO cards, and guest tenants.",
+            "Forgot-password modal and multi-step account creation with validation and field shaking for errors.",
+          ],
+        },
+        {
+          title: "Session Handling",
+          steps: [
+            "JWT + refresh tokens persist via secure storage with biometric unlock.",
+            "Soft logout banner for inactivity and forced logout messaging for revoked tokens.",
+          ],
+        },
+      ],
+      userRoles: [
+        {
+          name: "Care Coordinator",
+          summary:
+            "Owns day-to-day relationships, assignments, and follow-ups.",
+          capabilities: [
+            "Connections module with availability, relationship tags, and escalation levels.",
+            "Clients onboarding wizard, timeline snapshots, and quick actions.",
+            "Smart feed triage with contextual drill-ins.",
+          ],
+        },
+        {
+          name: "Case Manager",
+          summary: "Runs cases, sessions, and documentation throughput.",
+          capabilities: [
+            "Kanban-style case management with objectives, templates, and audits.",
+            "Session scheduling with recurrence, reminders, and consent tracking.",
+            "Document repository with labels, retention, and signature workflows.",
+          ],
+        },
+        {
+          name: "Clinician",
+          summary:
+            "Delivers care, communicates, and keeps profile/security data current.",
+          capabilities: [
+            "Unified inbox for direct, group, and broadcast conversations.",
+            "Profile + availability editor with credential tracking.",
+            "Security center for biometrics, sessions, and password rotation.",
+          ],
+        },
+      ],
+      flow: [
+        {
+          title: "Dashboard narrative",
+          steps: [
+            "Organization selector, notifications, and avatar anchor the top bar.",
+            "KPI cards deep link with filters; smart feed timeline keeps teams aligned.",
+            "Floating action button adapts to context (client, case, session, document).",
+          ],
+        },
+        {
+          title: "Module CRUD contract",
+          steps: [
+            "Every feature enforces list views with search + filters + empty states.",
+            "Detail screens surface metadata, related entities, and quick actions.",
+            "Add/Edit/Delete flows honor dependency checks, retention rules, and undo/snackbar cues.",
+          ],
+        },
+      ],
+      technical: {
+        architecture: [
+          "Flutter 3.x workspace with feature modules under lib/features/*",
+          "Riverpod + Cubit state with shared widgets in lib/core",
+          "Dio networking with JSON serializable models and service locators",
+          "Secure storage for tokens plus Firebase messaging hooks",
+        ],
+        experience: [
+          "Localization with Arabic/English toggles and RTL support",
+          "Offline mode caches lists and queues pending actions",
+          "Accessibility via font scaling, screen reader labels, and high-contrast theme",
+          "Audit-ready logging across every add/edit/delete event",
+        ],
+      },
+    },
+    featured: true,
   },
 ];

@@ -107,63 +107,6 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <svg
-            className="w-6 h-6 text-gray-400"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </motion.div>
-      </section>
-
-      {/* About Summary Section */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              About Me
-            </h2>
-            <div className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-              <p>
-                I'm a dedicated Flutter developer with a passion for building high-quality mobile 
-                applications that users love. With expertise in Dart, Flutter framework, and modern 
-                mobile development practices, I create apps that are not only visually appealing but 
-                also performant and scalable.
-              </p>
-              <p>
-                My journey in mobile development has led me to work with various technologies including 
-                Firebase for backend services, state management solutions like Provider and Bloc, and 
-                RESTful APIs. I'm always eager to learn new technologies and improve my craft.
-              </p>
-              <p>
-                When I'm not coding, you'll find me exploring new Flutter packages, contributing to 
-                open-source projects, or sharing knowledge with the developer community.
-              </p>
-            </div>
-            <div className="mt-8">
-              <Button to="/about" variant="primary">
-                Learn More About Me
-              </Button>
-            </div>
-          </motion.div>
-        </div>
       </section>
 
       {/* Skills Preview */}

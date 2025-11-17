@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import { projects } from '../data/projects';
-import Card from '../components/Card';
-import Button from '../components/Button';
-import LinkIcon from '../components/LinkIcon';
+import { motion } from "framer-motion";
+import { projects } from "../data/projects";
+import Card from "../components/Card";
+import Button from "../components/Button";
+import LinkIcon from "../components/LinkIcon";
 
 const Projects = () => {
   const containerVariants = {
@@ -30,8 +30,8 @@ const Projects = () => {
               My Projects
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              A collection of Flutter applications I've built, showcasing my skills in mobile development, 
-              UI/UX design, and problem-solving.
+              A collection of Flutter applications I've built, showcasing my
+              skills in mobile development, UI/UX design, and problem-solving.
             </p>
           </motion.div>
         </div>
@@ -102,7 +102,11 @@ const Projects = () => {
 
                     {/* Action Buttons */}
                     <div className="flex flex-col gap-3 mt-auto">
-                      <Button to={`/projects/${project.slug}`} variant="primary" className="w-full text-sm py-2">
+                      <Button
+                        to={`/projects/${project.slug}`}
+                        variant="primary"
+                        className="w-full text-sm py-2"
+                      >
                         View Details
                       </Button>
                       {project.links?.length > 0 && (
@@ -128,4 +132,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
