@@ -41,15 +41,7 @@ export const projects = [
       logo: null,
       icon: null,
     },
-    screenshots: [
-      "/screenshots/medtour/landing_1.png",
-      "/screenshots/medtour/landing_2.png",
-      "/screenshots/medtour/landing_3.png",
-      "/screenshots/medtour/landing_4.png",
-      "/screenshots/medtour/landing_5.png",
-      "/screenshots/medtour/landing_6.png",
-      "/screenshots/medtour/landing_7.png",
-    ],
+    screenshots: [],
     links: [
       {
         label: "Visit Website",
