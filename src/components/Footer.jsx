@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import ContactIcon from './ContactIcon';
 import { footerContent } from '../data/navigation';
 import { contactContent } from '../data/contact';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
-  const { brand, quickLinks } = footerContent;
+  const { quickLinks } = footerContent;
   const contactLinks = contactContent.channels;
 
   return (
@@ -17,16 +19,16 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <h3 className="text-xl font-bold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent mb-4">
-              {brand.name}
+              {t('footer.brand.name')}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
-              {brand.description}
+              {t('footer.brand.description')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
@@ -43,7 +45,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Connect</h4>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">{t('footer.connect')}</h4>
             <div className="flex space-x-4">
               {contactLinks.map((channel) => (
                 <motion.a

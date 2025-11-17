@@ -18,7 +18,8 @@
   "projects": {
     "title": "My Projects",
     "description": "A collection of Flutter applications I've built, showcasing my skills in mobile development, UI/UX design, and problem-solving.",
-    "viewDetails": "View Details"
+    "viewDetails": "View Details",
+    "featured": "Featured"
   },
   "about": {
     "hero": {
@@ -61,7 +62,8 @@
       "title": "Education"
     },
     "hobbies": {
-      "title": "Hobbies & Interests"
+      "title": "Hobbies & Interests",
+      "favorite": "Favorite"
     }
   },
   "contact": {
@@ -81,9 +83,11 @@
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Message sent successfully! I'll get back to you soon.",
-      "error": "Failed to send message. Please try again or contact me directly via email."
+      "error": "Failed to send message. Please try again or contact me directly via email.",
+      "subjectPrefix": "New message from"
     },
     "channels": {
+      "title": "Contact Information",
       "email": "Email",
       "phone": "Phone / WhatsApp",
       "linkedin": "LinkedIn",

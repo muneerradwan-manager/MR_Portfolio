@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Card from '../components/Card';
 import { aboutData } from '../data/about';
 import { profile } from '../data/profile';
@@ -6,6 +7,8 @@ import { experiences } from '../data/experience';
 import { hobbies } from '../data/hobbies';
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const experienceTimeline = experiences.map((exp) => ({
     ...exp,
     bullets: aboutData.experienceDetails[exp.id] ?? [],
@@ -23,10 +26,10 @@ const About = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              {aboutData.hero.title}
+              {t('about.hero.title')}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">{aboutData.hero.subtitle}</p>
-            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">{aboutData.hero.summary}</p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">{t('about.hero.subtitle')}</p>
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">{t('about.hero.summary')}</p>
 
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               {aboutData.contact.map((contact) => (
@@ -55,23 +58,31 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto"
             >
-              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">My Story</h2>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">{t('about.story.title')}</h2>
               <div className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                {aboutData.story.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                <p>{t('about.story.paragraph1')}</p>
+                <p>{t('about.story.paragraph2')}</p>
+                <p>{t('about.story.paragraph3')}</p>
               </div>
             </motion.div>
           </Card>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-            {aboutData.stats.map((stat) => (
-              <Card key={stat.label} className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
-                <p className="text-xs uppercase tracking-[0.4em] text-primary-500">{stat.label}</p>
-                <p className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">{stat.value}</p>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{stat.detail}</p>
-              </Card>
-            ))}
+            <Card className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+              <p className="text-xs uppercase tracking-[0.4em] text-primary-500">{t('about.stats.experience.label')}</p>
+              <p className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">{t('about.stats.experience.value')}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{t('about.stats.experience.detail')}</p>
+            </Card>
+            <Card className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+              <p className="text-xs uppercase tracking-[0.4em] text-primary-500">{t('about.stats.roles.label')}</p>
+              <p className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">{t('about.stats.roles.value')}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{t('about.stats.roles.detail')}</p>
+            </Card>
+            <Card className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+              <p className="text-xs uppercase tracking-[0.4em] text-primary-500">{t('about.stats.focus.label')}</p>
+              <p className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">{t('about.stats.focus.value')}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{t('about.stats.focus.detail')}</p>
+            </Card>
           </div>
         </div>
       </section>
@@ -85,12 +96,12 @@ const About = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
           >
-            Skills & Technologies
+            {t('about.skills.title')}
           </motion.h2>
           <Card className="p-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2">
-                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Core Skills</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.skills.coreSkills')}</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {profile.skills.map((skill) => (
                     <div key={skill} className="flex items-start gap-3">
@@ -102,7 +113,7 @@ const About = () => {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Languages</p>
+                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.skills.languages')}</p>
                 <div className="space-y-3">
                   {profile.languages.map((language) => (
                     <div key={language.name}>
@@ -126,7 +137,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
           >
-            Experience
+            {t('about.experience.title')}
           </motion.h2>
           <div className="max-w-4xl mx-auto space-y-8">
             {experienceTimeline.map((exp, index) => (
@@ -170,7 +181,7 @@ const About = () => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <Card className="p-8 bg-white dark:bg-gray-900">
-              <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Education</p>
+              <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.education.title')}</p>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{profile.education.degree}</h3>
@@ -197,7 +208,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
           >
-            Hobbies & Interests
+            {t('about.hobbies.title')}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {hobbies.map((hobby, index) => (
@@ -218,7 +229,7 @@ const About = () => {
                   </p>
                   {hobby.favorite && (
                     <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                      <p className="text-xs uppercase tracking-[0.2em] text-primary-500 mb-1">Favorite</p>
+                      <p className="text-xs uppercase tracking-[0.2em] text-primary-500 mb-1">{t('about.hobbies.favorite', 'Favorite')}</p>
                       <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
                         {hobby.favorite}
                       </p>

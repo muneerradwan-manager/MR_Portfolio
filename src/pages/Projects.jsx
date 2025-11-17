@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import { projects } from "../data/projects";
-import { projectsPageContent } from "../data/projectsPage";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import LinkIcon from "../components/LinkIcon";
 
 const Projects = () => {
+  const { t } = useTranslation();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,10 +30,10 @@ const Projects = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              {projectsPageContent.title}
+              {t('projects.title')}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              {projectsPageContent.description}
+              {t('projects.description')}
             </p>
           </motion.div>
         </div>
@@ -74,7 +76,7 @@ const Projects = () => {
                     )}
                     {project.featured && (
                       <div className="absolute top-4 right-4 bg-yellow-400 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                        Featured
+                        {t('projects.featured', 'Featured')}
                       </div>
                     )}
                   </div>
@@ -107,7 +109,7 @@ const Projects = () => {
                         variant="primary"
                         className="w-full text-sm py-2"
                       >
-                        View Details
+                        {t('projects.viewDetails')}
                       </Button>
                       {project.links?.length > 0 && (
                         <Button

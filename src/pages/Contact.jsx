@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import ContactIcon from '../components/ContactIcon';
 import { contactContent } from '../data/contact';
 
+// Keep contactContent for non-translatable data like email, hrefs, etc.
+
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -15,7 +19,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
-  const { hero, intro, form, channels, callout } = contactContent;
+  const { form, channels, callout } = contactContent;
 
   const handleChange = (e) => {
     setFormData({
@@ -36,7 +40,7 @@ const Contact = () => {
       form.emailjs.publicKey === 'YOUR_PUBLIC_KEY'
     ) {
       // Fallback to mailto if EmailJS is not configured
-      const subject = encodeURIComponent(`${form.subjectPrefix} ${formData.name}`);
+      const subject = encodeURIComponent(`${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`);
       const body = encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
       );
@@ -58,7 +62,7 @@ const Contact = () => {
           from_email: formData.email,
           message: formData.message,
           to_email: form.recipient,
-          subject: `${form.subjectPrefix} ${formData.name}`,
+          subject: `${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`,
         },
       );
 
@@ -87,10 +91,10 @@ const Contact = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              {hero.title}
+              {t('contact.hero.title')}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              {hero.description}
+              {t('contact.hero.description')}
             </p>
           </motion.div>
         </div>
@@ -109,7 +113,7 @@ const Contact = () => {
             >
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                  Send a Message
+                  {t('contact.form.title')}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -117,7 +121,7 @@ const Contact = () => {
                       htmlFor="name"
                       className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                     >
-                      Name
+                      {t('contact.form.name')}
                     </label>
                     <input
                       type="text"
@@ -127,7 +131,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                      placeholder="Your name"
+                      placeholder={t('contact.form.namePlaceholder')}
                     />
                   </div>
                   <div>
@@ -135,7 +139,7 @@ const Contact = () => {
                       htmlFor="email"
                       className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                     >
-                      Email
+                      {t('contact.form.email')}
                     </label>
                     <input
                       type="email"
@@ -145,7 +149,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                      placeholder="your.email@example.com"
+                      placeholder={t('contact.form.emailPlaceholder')}
                     />
                   </div>
                   <div>
@@ -153,7 +157,7 @@ const Contact = () => {
                       htmlFor="message"
                       className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
                     >
-                      Message
+                      {t('contact.form.message')}
                     </label>
                     <textarea
                       id="message"
@@ -163,7 +167,7 @@ const Contact = () => {
                       required
                       rows={6}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
-                      placeholder="Your message..."
+                      placeholder={t('contact.form.messagePlaceholder')}
                     />
                   </div>
                   {submitStatus === 'success' && (
@@ -172,7 +176,7 @@ const Contact = () => {
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-lg"
                     >
-                      Message sent successfully! I'll get back to you soon.
+                      {t('contact.form.success')}
                     </motion.div>
                   )}
                   {submitStatus === 'error' && (
@@ -181,7 +185,7 @@ const Contact = () => {
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded-lg"
                     >
-                      Failed to send message. Please try again or contact me directly via email.
+                      {t('contact.form.error')}
                     </motion.div>
                   )}
                   <Button
@@ -190,7 +194,7 @@ const Contact = () => {
                     className="w-full"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : form.submitLabel}
+                    {isSubmitting ? t('contact.form.sending') : t('contact.form.submit')}
                   </Button>
                 </form>
               </Card>
@@ -206,13 +210,13 @@ const Contact = () => {
             >
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-                  Contact Information
+                  {t('contact.channels.title')}
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 mb-8">{intro}</p>
+                <p className="text-gray-600 dark:text-gray-300 mb-8">{t('contact.intro')}</p>
                 <div className="space-y-6">
                   {channels.map((method, index) => (
                     <motion.a
-                      key={method.label}
+                      key={method.type}
                       href={method.href}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -227,7 +231,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <p className="font-semibold text-gray-900 dark:text-gray-100">
-                          {method.label}
+                          {t(`contact.channels.${method.type}`)}
                         </p>
                         <p className="text-sm text-gray-600 dark:text-gray-400">
                           {method.value}
@@ -240,13 +244,13 @@ const Contact = () => {
 
               <Card className="p-8 bg-gradient-to-br from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20">
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                  {callout.title}
+                  {t('contact.callout.title')}
                 </h3>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">
-                  {callout.description}
+                  {t('contact.callout.description')}
                 </p>
                 <Button href={callout.action.href} variant="primary" className="w-full">
-                  {callout.action.label}
+                  {t('contact.callout.action')}
                 </Button>
               </Card>
             </motion.div>

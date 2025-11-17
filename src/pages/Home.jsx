@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import Button from '../components/Button';
-import { homeContent } from '../data/home';
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -17,8 +19,6 @@ const Home = () => {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
   };
-
-  const { hero } = homeContent;
 
   return (
     <div className="min-h-screen">
@@ -69,7 +69,7 @@ const Home = () => {
                 className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold mb-4"
                 whileHover={{ scale: 1.05 }}
               >
-                {hero.badge}
+                {t('home.hero.badge')}
               </motion.div>
             </motion.div>
 
@@ -77,32 +77,32 @@ const Home = () => {
               variants={itemVariants}
               className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-primary-600 to-gray-900 dark:from-gray-100 dark:via-primary-400 dark:to-gray-100 bg-clip-text text-transparent"
             >
-              {hero.headline}
+              {t('home.hero.headline')}
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed"
             >
-              {hero.lead}
+              {t('home.hero.lead')}
             </motion.p>
 
             <motion.p
               variants={itemVariants}
               className="text-lg text-gray-500 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
             >
-              {hero.description}
+              {t('home.hero.description')}
             </motion.p>
 
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center"
             >
-              <Button to={hero.primaryCta.to} variant={hero.primaryCta.variant} className="text-base px-8 py-4">
-                {hero.primaryCta.label}
+              <Button to="/projects" variant="primary" className="text-base px-8 py-4">
+                {t('home.hero.primaryCta')}
               </Button>
-              <Button to={hero.secondaryCta.to} variant={hero.secondaryCta.variant} className="text-base px-8 py-4">
-                {hero.secondaryCta.label}
+              <Button to="/contact" variant="outline" className="text-base px-8 py-4">
+                {t('home.hero.secondaryCta')}
               </Button>
             </motion.div>
           </motion.div>
