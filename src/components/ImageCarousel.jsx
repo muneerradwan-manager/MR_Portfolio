@@ -22,13 +22,13 @@ const ImageCarousel = ({ images = [], className = '' }) => {
   }
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl shadow-2xl ${className}`}>
+    <div className={`relative overflow-hidden rounded-2xl shadow-2xl bg-gray-900/90 dark:bg-black/90 min-h-[28rem] flex items-center justify-center ${className}`}>
       <AnimatePresence mode="wait">
         <motion.img
           key={images[current]}
           src={images[current]}
           alt={`Screenshot ${current + 1}`}
-          className="w-full h-96 object-cover"
+          className="w-full max-h-[36rem] object-contain"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
