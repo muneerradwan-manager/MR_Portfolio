@@ -2,6 +2,7 @@ export const projects = [
   {
     id: 7,
     title: "MedTour.sy",
+    slug: "medtour-sy",
     description: "MedTour.sy delivers a premium landing experience that guides medical travelers through the brand story, curated services, logistics support, and call-to-action moments. The public hero screens highlight hero narratives, modular sections for services, how-it-works flows, testimonials, multilingual content, and CTA cards that route visitors to coordinators, reflecting a cohesive marketing-to-product journey.",
     technologies: [
       "Flutter",
@@ -46,6 +47,7 @@ export const projects = [
   {
     id: 1,
     title: "E-Commerce Flutter App",
+    slug: "ecommerce-flutter",
     description: "A full-featured e-commerce mobile application built with Flutter, featuring product catalog, shopping cart, user authentication, and payment integration. Includes real-time inventory management and order tracking.",
     technologies: ["Flutter", "Dart", "Firebase", "Provider", "Stripe API"],
     screenshots: [
@@ -60,6 +62,7 @@ export const projects = [
   {
     id: 2,
     title: "Weather Forecast App",
+    slug: "weather-forecast",
     description: "Beautiful weather application with location-based forecasts, detailed weather maps, and customizable widgets. Features include 7-day forecasts, hourly predictions, and weather alerts.",
     technologies: ["Flutter", "Dart", "REST API", "Provider", "Geolocator"],
     screenshots: [
@@ -73,6 +76,7 @@ export const projects = [
   {
     id: 3,
     title: "Task Management App",
+    slug: "task-manager",
     description: "Productive task management app with team collaboration features. Includes project boards, task assignments, deadlines, notifications, and progress tracking with beautiful UI/UX.",
     technologies: ["Flutter", "Dart", "Firebase", "Bloc", "Cloud Firestore"],
     screenshots: [
@@ -87,6 +91,7 @@ export const projects = [
   {
     id: 4,
     title: "Social Media App",
+    slug: "social-media",
     description: "Modern social media platform with real-time messaging, story features, post sharing, and user profiles. Built with scalable architecture and optimized performance.",
     technologies: ["Flutter", "Dart", "Firebase", "Riverpod", "WebRTC"],
     screenshots: [
@@ -100,6 +105,7 @@ export const projects = [
   {
     id: 5,
     title: "Fitness Tracker",
+    slug: "fitness-tracker",
     description: "Comprehensive fitness tracking application with workout plans, progress charts, calorie counter, and integration with wearable devices. Features beautiful animations and intuitive navigation.",
     technologies: ["Flutter", "Dart", "SQLite", "Provider", "Charts"],
     screenshots: [
@@ -114,6 +120,7 @@ export const projects = [
   {
     id: 6,
     title: "News Reader App",
+    slug: "news-reader",
     description: "Clean and modern news aggregator with multiple sources, categories, bookmarking, and offline reading capabilities. Features dark mode and customizable reading experience.",
     technologies: ["Flutter", "Dart", "REST API", "Hive", "GetX"],
     screenshots: [
