@@ -21,9 +21,10 @@ const LanguageSwitcher = () => {
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
 
   useEffect(() => {
-    // Set initial direction based on current language
+    // Set initial direction and lang attribute based on current language
     const currentLang = i18n.language || 'en';
     document.documentElement.dir = ['ar', 'fa'].includes(currentLang) ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLang;
   }, []);
 
   useEffect(() => {
@@ -40,8 +41,9 @@ const LanguageSwitcher = () => {
   const changeLanguage = (langCode) => {
     i18n.changeLanguage(langCode);
     setIsOpen(false);
-    // Update HTML dir attribute for RTL languages
+    // Update HTML dir and lang attributes for RTL languages
     document.documentElement.dir = ['ar', 'fa'].includes(langCode) ? 'rtl' : 'ltr';
+    document.documentElement.lang = langCode;
   };
 
   return (

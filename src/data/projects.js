@@ -209,7 +209,7 @@ export const projects = [
     slug: "ovacs",
     tagline:
       "One command center for coordinators, case managers, and clinicians",
-    industry: "Healthcare Operations / Care Coordination",
+    industry: "Case, Client, Session And Document Management System",
     description:
       "OVACS is a cross-platform Flutter workspace built for regulated care teams. It unifies onboarding, dashboards, clients, cases, sessions, documents, messaging, and compliance workflows so coordinators, case managers, and clinicians can run the entire practice without bouncing between tools.",
     technologies: [

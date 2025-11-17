@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 import { projects } from "../data/projects";
 import MobileScreenshotGallery from "../components/MobileScreenshotGallery";
 import Button from "../components/Button";
@@ -9,8 +10,7 @@ import LinkIcon from "../components/LinkIcon";
 
 const brandFallback = "#0EA5E9";
 
-const BrandBadge = ({ project }) => {
-  const accent = project?.brand?.accent ?? brandFallback;
+const BrandBadge = ({ project, primaryColor }) => {
   const initials = project?.title
     ?.split(" ")
     ?.map((word) => word.charAt(0))
@@ -44,7 +44,7 @@ const BrandBadge = ({ project }) => {
     <div
       className="h-16 w-16 rounded-2xl flex items-center justify-center text-white font-semibold text-xl shadow-2xl"
       style={{
-        background: `linear-gradient(135deg, ${accent} 0%, #0f172a 100%)`,
+        background: `linear-gradient(135deg, ${primaryColor} 0%, #0f172a 100%)`,
       }}
       aria-hidden="true"
     >
@@ -55,6 +55,7 @@ const BrandBadge = ({ project }) => {
 
 const ProjectDetails = () => {
   const { slug } = useParams();
+  const { t } = useTranslation();
 
   const project = useMemo(
     () => projects.find((item) => item.slug === slug),
@@ -86,6 +87,35 @@ const ProjectDetails = () => {
   const metrics = project.metrics ?? [];
   const deliverables = project.deliverables ?? [];
   const caseStudy = project.caseStudy ?? null;
+
+  // Get the current primary color from CSS variables (reactive)
+  const [primaryColor, setPrimaryColor] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const root = document.documentElement;
+      const primary600 = getComputedStyle(root).getPropertyValue('--color-primary-600').trim();
+      return primary600 || '#16a34a'; // fallback to default green
+    }
+    return '#16a34a';
+  });
+
+  // Update primary color when it changes (check periodically or on mount)
+  useEffect(() => {
+    const updatePrimaryColor = () => {
+      if (typeof window !== 'undefined') {
+        const root = document.documentElement;
+        const primary600 = getComputedStyle(root).getPropertyValue('--color-primary-600').trim();
+        setPrimaryColor(primary600 || '#16a34a');
+      }
+    };
+
+    // Update on mount
+    updatePrimaryColor();
+
+    // Update periodically to catch color theme changes
+    const interval = setInterval(updatePrimaryColor, 100);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const highlightCards = caseStudy?.highlights?.length
     ? caseStudy.highlights
@@ -170,10 +200,10 @@ const ProjectDetails = () => {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              Back to Projects
+              {t('projectDetails.common.backToProjects')}
             </Link>
-            <p className="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
-              Featured Case Study
+            <p className="text-xs uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400">
+              {t('projectDetails.common.featuredCaseStudy')}
             </p>
           </div>
 
@@ -183,38 +213,38 @@ const ProjectDetails = () => {
             transition={{ duration: 0.6 }}
             className="rounded-3xl px-8 py-10 shadow-2xl text-white"
             style={{
-              background: `linear-gradient(135deg, ${brandAccent} 0%, rgba(15,23,42,0.95) 100%)`,
+              background: `linear-gradient(135deg, ${primaryColor} 0%, rgba(15,23,42,0.95) 100%)`,
             }}
           >
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10">
               <div className="space-y-6 max-w-3xl">
                 <div className="flex items-center gap-4">
-                  <BrandBadge project={project} />
+                  <BrandBadge project={project} primaryColor={primaryColor} />
                   <div>
                     {project.industry && (
                       <p className="text-xs uppercase tracking-[0.3em] text-white/70">
-                        {project.industry}
+                        {t(`projectDetails.${project.slug}.industry`, project.industry)}
                       </p>
                     )}
                     <h1 className="text-4xl md:text-5xl font-semibold leading-tight">
-                      {project.title}
+                      {t(`projectDetails.${project.slug}.title`, project.title)}
                     </h1>
                   </div>
                 </div>
                 {project.tagline && (
-                  <p className="text-xl text-white/90">{project.tagline}</p>
+                  <p className="text-xl text-white/90">{t(`projectDetails.${project.slug}.tagline`, project.tagline)}</p>
                 )}
                 <p className="text-base md:text-lg text-white/80">
-                  {project.description}
+                  {t(`projectDetails.${project.slug}.description`, project.description)}
                 </p>
                 {deliverables.length > 0 && (
                   <div className="flex flex-wrap gap-3">
-                    {deliverables.map((deliverable) => (
+                    {deliverables.map((deliverable, index) => (
                       <span
                         key={deliverable}
                         className="px-4 py-2 rounded-full bg-white/15 text-sm font-medium tracking-wide"
                       >
-                        {deliverable}
+                        {t(`projectDetails.${project.slug}.deliverables.${index}`, deliverable)}
                       </span>
                     ))}
                   </div>
@@ -225,12 +255,12 @@ const ProjectDetails = () => {
                 <div className="w-full lg:w-auto">
                   <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 space-y-3">
                     <p className="text-xs uppercase tracking-[0.3em] text-white/70">
-                      Launch points
+                      {t('projectDetails.common.launchPoints')}
                     </p>
                     {links.map((link) => (
                       <Button key={link.href} href={link.href} variant="glass" className="w-full gap-2 text-sm">
                         <LinkIcon type={link.type} />
-                        {link.label}
+                        {t('projectDetails.common.visitWebsite', link.label)}
                       </Button>
                     ))}
                   </div>
@@ -240,17 +270,27 @@ const ProjectDetails = () => {
 
             {metrics.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-                {metrics.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="rounded-2xl bg-white/10 px-4 py-6 text-center border border-white/10"
-                  >
-                    <p className="text-3xl font-semibold">{metric.value}</p>
-                    <p className="text-white/70 text-sm uppercase tracking-widest mt-1">
-                      {metric.label}
-                    </p>
-                  </div>
-                ))}
+                {metrics.map((metric, index) => {
+                  const metricKeys = project.slug === 'medtour' 
+                    ? ['userRoles', 'languages', 'platforms']
+                    : ['coreModules', 'channels', 'platforms'];
+                  const valueKeys = project.slug === 'medtour'
+                    ? ['userRolesValue', 'languagesValue', 'platformsValue']
+                    : ['coreModulesValue', 'channelsValue', 'platformsValue'];
+                  return (
+                    <div
+                      key={metric.label}
+                      className="rounded-2xl bg-white/10 px-4 py-6 text-center border border-white/10"
+                    >
+                      <p className="text-3xl font-semibold">
+                        {t(`projectDetails.${project.slug}.metrics.${valueKeys[index]}`, metric.value)}
+                      </p>
+                      <p className="text-white/70 text-sm uppercase tracking-widest mt-1">
+                        {t(`projectDetails.${project.slug}.metrics.${metricKeys[index]}`, metric.label)}
+                      </p>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </motion.div>
@@ -261,30 +301,33 @@ const ProjectDetails = () => {
         <div className="container-custom space-y-12">
           {caseStudy?.summary?.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseStudy.summary.map((item) => (
-                <Card
-                  key={item.title}
-                  className="p-6 h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800"
-                >
-                  <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-3">
-                    {item.title}
-                  </p>
-                  <p className="text-lg text-gray-700 dark:text-gray-200">
-                    {item.body}
-                  </p>
-                </Card>
-              ))}
+              {caseStudy.summary.map((item, index) => {
+                const key = index === 0 ? 'challenge' : 'solution';
+                return (
+                  <Card
+                    key={item.title}
+                    className="p-6 h-full bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800"
+                  >
+                    <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-3">
+                      {t(`projectDetails.${project.slug}.caseStudy.summary.${key}.title`, item.title)}
+                    </p>
+                    <p className="text-lg text-gray-700 dark:text-gray-200">
+                      {t(`projectDetails.${project.slug}.caseStudy.summary.${key}.body`, item.body)}
+                    </p>
+                  </Card>
+                );
+              })}
             </div>
           )}
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {highlightCards.map((highlight) => (
+            {highlightCards.map((highlight, index) => (
               <Card key={highlight.title} className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                  {highlight.title}
+                  {t(`projectDetails.${project.slug}.caseStudy.highlights.${index}.title`, highlight.title)}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  {highlight.description}
+                  {t(`projectDetails.${project.slug}.caseStudy.highlights.${index}.description`, highlight.description)}
                 </p>
               </Card>
             ))}
@@ -297,15 +340,15 @@ const ProjectDetails = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                Product gallery
+                {t('projectDetails.common.productGallery')}
               </p>
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">
-                Screens that tell the story
+                {t('projectDetails.common.screensStory')}
               </h2>
             </div>
             {totalScreens > 0 && (
               <p className="text-sm text-gray-500 dark:text-gray-400">
-                Tap any screen to open the immersive gallery.
+                {t('projectDetails.common.tapToOpen')}
               </p>
             )}
           </div>
@@ -322,10 +365,10 @@ const ProjectDetails = () => {
           <div className="container-custom space-y-6">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                User entry story
+                {t('projectDetails.common.userEntryStory')}
               </p>
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">
-                From landing page to role dashboards
+                {t('projectDetails.common.fromLandingToDashboards')}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -336,12 +379,14 @@ const ProjectDetails = () => {
                       {index + 1}
                     </span>
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                      {journey.title}
+                      {t(`projectDetails.${project.slug}.caseStudy.userJourney.${index}.title`, journey.title)}
                     </h3>
                   </div>
                   <ul className="space-y-3 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    {journey.steps.map((step) => (
-                      <li key={step}>{step}</li>
+                    {journey.steps.map((step, stepIndex) => (
+                      <li key={step}>
+                        {t(`projectDetails.${project.slug}.caseStudy.userJourney.${index}.steps.${stepIndex}`, step)}
+                      </li>
                     ))}
                   </ul>
                 </Card>
@@ -356,30 +401,38 @@ const ProjectDetails = () => {
           <div className="container-custom space-y-8">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                Role capabilities
+                {t('projectDetails.common.roleCapabilities')}
               </p>
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">
-                Governance built for every persona
+                {t('projectDetails.common.governanceForPersonas')}
               </h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {caseStudy.userRoles.map((role) => (
-                <Card key={role.name} className="p-6 flex flex-col h-full">
-                  <div className="mb-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                      {role.name}
-                    </p>
-                    <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1">
-                      {role.summary}
-                    </p>
-                  </div>
-                  <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    {role.capabilities.map((capability) => (
-                      <li key={capability}>{capability}</li>
-                    ))}
-                  </ul>
-                </Card>
-              ))}
+              {caseStudy.userRoles.map((role, roleIndex) => {
+                const roleKeys = project.slug === 'medtour'
+                  ? ['admin', 'centerOwner', 'hotelOwner', 'doctor', 'customer']
+                  : ['careCoordinator', 'caseManager', 'clinician'];
+                const roleKey = roleKeys[roleIndex];
+                return (
+                  <Card key={role.name} className="p-6 flex flex-col h-full">
+                    <div className="mb-4">
+                      <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
+                        {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.name`, role.name)}
+                      </p>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1">
+                        {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.summary`, role.summary)}
+                      </p>
+                    </div>
+                    <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
+                      {role.capabilities.map((capability, capIndex) => (
+                        <li key={capability}>
+                          {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.capabilities.${capIndex}`, capability)}
+                        </li>
+                      ))}
+                    </ul>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -390,21 +443,23 @@ const ProjectDetails = () => {
           <div className="container-custom space-y-6">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                Application flow
+                {t('projectDetails.common.applicationFlow')}
               </p>
               <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">
-                System-level guardrails
+                {t('projectDetails.common.systemGuardrails')}
               </h2>
             </div>
             <div className="space-y-6">
-              {caseStudy.flow.map((flow) => (
+              {caseStudy.flow.map((flow, flowIndex) => (
                 <Card key={flow.title} className="p-6">
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
-                    {flow.title}
+                    {t(`projectDetails.${project.slug}.caseStudy.flow.${flowIndex}.title`, flow.title)}
                   </h3>
                   <ul className="space-y-2 text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    {flow.steps.map((step) => (
-                      <li key={step}>{step}</li>
+                    {flow.steps.map((step, stepIndex) => (
+                      <li key={step}>
+                        {t(`projectDetails.${project.slug}.caseStudy.flow.${flowIndex}.steps.${stepIndex}`, step)}
+                      </li>
                     ))}
                   </ul>
                 </Card>
@@ -419,7 +474,7 @@ const ProjectDetails = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <Card className="p-6">
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-4">
-                Technologies
+                {t('projectDetails.common.technologies')}
               </h3>
               <div className="flex flex-wrap gap-3">
                 {project.technologies.map((tech) => (
@@ -437,21 +492,25 @@ const ProjectDetails = () => {
               <Card className="p-6 space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                    Architecture
+                    {t('projectDetails.common.architecture')}
                   </h3>
                   <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    {caseStudy.technical.architecture.map((item) => (
-                      <li key={item}>{item}</li>
+                    {caseStudy.technical.architecture.map((item, index) => (
+                      <li key={item}>
+                        {t(`projectDetails.${project.slug}.caseStudy.technical.architecture.${index}`, item)}
+                      </li>
                     ))}
                   </ul>
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
-                    Experience systems
+                    {t('projectDetails.common.experienceSystems')}
                   </h3>
                   <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-                    {caseStudy.technical.experience.map((item) => (
-                      <li key={item}>{item}</li>
+                    {caseStudy.technical.experience.map((item, index) => (
+                      <li key={item}>
+                        {t(`projectDetails.${project.slug}.caseStudy.technical.experience.${index}`, item)}
+                      </li>
                     ))}
                   </ul>
                 </div>
@@ -487,7 +546,7 @@ const ProjectDetails = () => {
                   onClick={closeLightbox}
                   className="inline-flex items-center text-sm uppercase tracking-[0.3em] text-white/70 hover:text-white"
                 >
-                  Close
+                  {t('common.close')}
                 </button>
               </div>
               <div className="relative bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">

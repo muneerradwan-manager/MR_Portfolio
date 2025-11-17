@@ -112,6 +112,303 @@
     "loading": "Loading...",
     "error": "Error",
     "close": "Close"
+  },
+  "projectDetails": {
+    "common": {
+      "featuredCaseStudy": "Featured Case Study",
+      "backToProjects": "Back to Projects",
+      "launchPoints": "Launch points",
+      "productGallery": "Product gallery",
+      "screensStory": "Screens that tell the story",
+      "tapToOpen": "Tap any screen to open the immersive gallery.",
+      "userEntryStory": "User entry story",
+      "fromLandingToDashboards": "From landing page to role dashboards",
+      "roleCapabilities": "Role capabilities",
+      "governanceForPersonas": "Governance built for every persona",
+      "applicationFlow": "Application flow",
+      "systemGuardrails": "System-level guardrails",
+      "technologies": "Technologies",
+      "architecture": "Architecture",
+      "experience": "Experience",
+      "experienceSystems": "Experience systems",
+      "visitWebsite": "Visit Website"
+    },
+    "medtour": {
+      "title": "MedTour.sy",
+      "tagline": "Medical tourism OS for patients, partners, and coordinators",
+      "industry": "Medical Tourism / Marketplace",
+      "description": "MedTour.sy delivers a premium landing experience that guides medical travelers through the brand story, curated services, logistics support, and call-to-action moments. The public hero screens highlight hero narratives, modular sections for services, how-it-works flows, testimonials, multilingual content, and CTA cards that route visitors to coordinators, reflecting a cohesive marketing-to-product journey.",
+      "metrics": {
+        "userRoles": "User Roles",
+        "userRolesValue": "5 personas",
+        "languages": "Languages",
+        "languagesValue": "11 locales",
+        "platforms": "Platforms",
+        "platformsValue": "iOS · Android"
+      },
+      "deliverables": {
+        "0": "Marketing landing experience",
+        "1": "Role-based mobile & web app",
+        "2": "Admin console + governance"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "Challenge",
+            "body": "International patients needed a single, trusted destination to browse treatments, compare centers and hotels, and hand off logistics to coordinators without friction."
+          },
+          "solution": {
+            "title": "Solution",
+            "body": "Designed and shipped a Flutter-powered platform with guided onboarding, partner verification, and a role-aware workspace that keeps admins, centers, hotels, doctors, and travelers in sync."
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "Guided pre-arrival journey",
+            "description": "Hero narratives, modular service blocks, and testimonials lead prospects to Get Started CTAs that route directly to coordinators."
+          },
+          "1": {
+            "title": "Dual registration funnels",
+            "description": "Customers breeze through a lightweight sign-up while partners complete a licensed two-step flow with OTP verification and profile completion gates."
+          },
+          "2": {
+            "title": "Role-aware dashboards",
+            "description": "Post-login routing launches bespoke home screens for Admin, Center Owner, Hotel Owner, Doctor, and Customer roles with curated menus."
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Landing → Action",
+            "steps": {
+              "0": "Spectacular hero, services, how-it-works, testimonials, and CTAs build trust.",
+              "1": "Visitors tap Get Started to choose customer or partner journeys."
+            }
+          },
+          "1": {
+            "title": "Registration & Verification",
+            "steps": {
+              "0": "Customers submit personal details and land directly inside their home feed.",
+              "1": "Partners complete personal info, institution details, license data, and OTP email verification before activating their workspace."
+            }
+          },
+          "2": {
+            "title": "Authentication & Routing",
+            "steps": {
+              "0": "Login routes returning users to their role dashboard.",
+              "1": "Session-aware guard skips login when a valid token exists.",
+              "2": "Password reset is split into email request and secure reset form."
+            }
+          }
+        },
+        "userRoles": {
+          "admin": {
+            "name": "Admin",
+            "summary": "Full control over people, permissions, and platform content.",
+            "capabilities": {
+              "0": "Cross-platform dashboard with live KPIs",
+              "1": "User, role, and permission lifecycle management",
+              "2": "Order/request triage with status, completion, and audit tools"
+            }
+          },
+          "centerOwner": {
+            "name": "Center Owner",
+            "summary": "Manages clinics, doctors, departments, and medical services.",
+            "capabilities": {
+              "0": "Center profile creation, photo galleries, and working hours",
+              "1": "Doctor, department, service, and equipment catalogs",
+              "2": "Event scheduling and insight access"
+            }
+          },
+          "hotelOwner": {
+            "name": "Hotel Owner",
+            "summary": "Operates hospitality inventory tightly linked to medical trips.",
+            "capabilities": {
+              "0": "Hotel profiles with licensing proof and amenity controls",
+              "1": "Room-type templates, pricing, and per-room availability",
+              "2": "Event programming and concierge coordination"
+            }
+          },
+          "doctor": {
+            "name": "Doctor",
+            "summary": "Keeps personal profiles and schedules current.",
+            "capabilities": {
+              "0": "Profile editing with specialization metadata",
+              "1": "Schedule blocks, appointment slots, and availability windows",
+              "2": "Assigned center visibility and messaging hooks"
+            }
+          },
+          "customer": {
+            "name": "Customer",
+            "summary": "Explores services and orchestrates travel logistics.",
+            "capabilities": {
+              "0": "Browse centers, hotels, doctors, and equipment libraries",
+              "1": "Create medical, lodging, or equipment requests and track statuses",
+              "2": "Future-ready placeholders for flights and transportation bookings"
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Authentication funnel",
+            "steps": {
+              "0": "Landing page → CTA → Register (user or partner) → Verification (if partner) → Login → Role dashboard",
+              "1": "Existing sessions bypass login and drop users into their home instantly."
+            }
+          },
+          "1": {
+            "title": "Role-based navigation",
+            "steps": {
+              "0": "Each role receives a dedicated navigation drawer with scoped modules.",
+              "1": "Guards ensure only permitted features render per permission tag."
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "Feature-based Flutter workspace (ADMIN, AUTH, OWNER, DOCTOR, USER, PUBLIC)",
+            "1": "BLoC/Cubit state containers with dependency injection via GetIt",
+            "2": "Dio-powered networking layer with interceptors and typed routes",
+            "3": "Shared core widgets, theming, and utilities reused across modules"
+          },
+          "experience": {
+            "0": "11-language localization (EN, AR, TR, RU, ZH, FA, HI, UR, JA, KO, TH, DE)",
+            "1": "Light/dark theme toggle driven by shared design tokens",
+            "2": "Offline-friendly caching and session persistence via SharedPreferences",
+            "3": "Role-aware routing guards and permission-tag enforcement",
+            "4": "High-fidelity media handling with uploads, galleries, and PhotoView"
+          }
+        }
+      }
+    },
+    "ovacs": {
+      "title": "OVACS Mobile Suite",
+      "tagline": "One command center for coordinators, case managers, and clinicians",
+      "industry": "Case, Client, Session And Document Management System",
+      "description": "OVACS is a cross-platform Flutter workspace built for regulated care teams. It unifies onboarding, dashboards, clients, cases, sessions, documents, messaging, and compliance workflows so coordinators, case managers, and clinicians can run the entire practice without bouncing between tools.",
+      "metrics": {
+        "coreModules": "Core Modules",
+        "coreModulesValue": "10+",
+        "channels": "Channels",
+        "channelsValue": "Push · Email · SMS",
+        "platforms": "Platforms",
+        "platformsValue": "iOS · Android · Tablet"
+      },
+      "deliverables": {
+        "0": "Role-aware mobile suite",
+        "1": "Modular CRUD workspaces",
+        "2": "QA + compliance documentation"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "Challenge",
+            "body": "Care teams juggled disconnected tools for clients, cases, messaging, and compliance, creating context switching, audit gaps, and onboarding drag for new staff."
+          },
+          "solution": {
+            "title": "Solution",
+            "body": "Designed OVACS as a guided Flutter suite with shared navigation, reusable CRUD patterns, and opinionated QA checklists so every module behaves consistently while staying HIPAA-ready."
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "First-time entry playbook",
+            "description": "Splash → onboarding carousel → multi-option sign-in with SSO, guest tenants, and granular validation keeps the first-run experience on-brand and secure."
+          },
+          "1": {
+            "title": "Dashboard telling the whole story",
+            "description": "KPIs, smart feed, quick search, and contextual FAB shortcuts launch users into the right module with filters already applied."
+          },
+          "2": {
+            "title": "Universal CRUD rails",
+            "description": "Every module mirrors the list → filter → detail → action rhythm, so QA, product, and engineering speak the same language across Connections, Clients, Cases, Sessions, and more."
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Splash & Onboarding",
+            "steps": {
+              "0": "Branded splash loads DI, localization, and theme tokens.",
+              "1": "First launch shows onboarding carousel plus notification opt-in."
+            }
+          },
+          "1": {
+            "title": "Authentication Center",
+            "steps": {
+              "0": "Sign-in supports email/password, SSO cards, and guest tenants.",
+              "1": "Forgot-password modal and multi-step account creation with validation and field shaking for errors."
+            }
+          },
+          "2": {
+            "title": "Session Handling",
+            "steps": {
+              "0": "JWT + refresh tokens persist via secure storage with biometric unlock.",
+              "1": "Soft logout banner for inactivity and forced logout messaging for revoked tokens."
+            }
+          }
+        },
+        "userRoles": {
+          "careCoordinator": {
+            "name": "Care Coordinator",
+            "summary": "Owns day-to-day relationships, assignments, and follow-ups.",
+            "capabilities": {
+              "0": "Connections module with availability, relationship tags, and escalation levels.",
+              "1": "Clients onboarding wizard, timeline snapshots, and quick actions.",
+              "2": "Smart feed triage with contextual drill-ins."
+            }
+          },
+          "caseManager": {
+            "name": "Case Manager",
+            "summary": "Runs cases, sessions, and documentation throughput.",
+            "capabilities": {
+              "0": "Kanban-style case management with objectives, templates, and audits.",
+              "1": "Session scheduling with recurrence, reminders, and consent tracking.",
+              "2": "Document repository with labels, retention, and signature workflows."
+            }
+          },
+          "clinician": {
+            "name": "Clinician",
+            "summary": "Delivers care, communicates, and keeps profile/security data current.",
+            "capabilities": {
+              "0": "Unified inbox for direct, group, and broadcast conversations.",
+              "1": "Profile + availability editor with credential tracking.",
+              "2": "Security center for biometrics, sessions, and password rotation."
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Dashboard narrative",
+            "steps": {
+              "0": "Organization selector, notifications, and avatar anchor the top bar.",
+              "1": "KPI cards deep link with filters; smart feed timeline keeps teams aligned.",
+              "2": "Floating action button adapts to context (client, case, session, document)."
+            }
+          },
+          "1": {
+            "title": "Module CRUD contract",
+            "steps": {
+              "0": "Every feature enforces list views with search + filters + empty states.",
+              "1": "Detail screens surface metadata, related entities, and quick actions.",
+              "2": "Add/Edit/Delete flows honor dependency checks, retention rules, and undo/snackbar cues."
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "Flutter 3.x workspace with feature modules under lib/features/*",
+            "1": "Riverpod + Cubit state with shared widgets in lib/core",
+            "2": "Dio networking with JSON serializable models and service locators",
+            "3": "Secure storage for tokens plus Firebase messaging hooks"
+          },
+          "experience": {
+            "0": "Localization with Arabic/English toggles and RTL support",
+            "1": "Offline mode caches lists and queues pending actions",
+            "2": "Accessibility via font scaling, screen reader labels, and high-contrast theme",
+            "3": "Audit-ready logging across every add/edit/delete event"
+          }
+        }
+      }
+    }
   }
 }
 

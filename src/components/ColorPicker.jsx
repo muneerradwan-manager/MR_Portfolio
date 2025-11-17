@@ -1,5 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
+import { motion } from 'framer-motion';
 
 const colorThemes = [
   {
@@ -133,137 +133,95 @@ const colorThemes = [
 ];
 
 const ColorPicker = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(() => {
-    return localStorage.getItem('colorTheme') || 'green';
+  const [isAnimating, setIsAnimating] = useState(() => {
+    const saved = localStorage.getItem('colorAnimation');
+    return saved ? saved === 'true' : true; // Default: true (animating)
   });
-  const dropdownRef = useRef(null);
+  const [currentColorIndex, setCurrentColorIndex] = useState(() => {
+    const saved = localStorage.getItem('colorIndex');
+    return saved ? parseInt(saved, 10) : 0; // Start with green (index 0)
+  });
 
-  useEffect(() => {
-    // Apply saved color on mount
-    applyColorTheme(selectedColor);
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  const applyColorTheme = (colorValue) => {
-    const theme = colorThemes.find((t) => t.value === colorValue) || colorThemes[0];
+  const applyColorTheme = useCallback((theme) => {
     const root = document.documentElement;
-
     // Apply all color shades as CSS variables
     Object.entries(theme.colors).forEach(([shade, color]) => {
       root.style.setProperty(`--color-primary-${shade}`, color);
     });
+    root.setAttribute('data-color-theme', theme.value);
+  }, []);
 
-    // Update Tailwind classes by updating the data attribute
-    root.setAttribute('data-color-theme', colorValue);
+  // Auto-cycle colors every 2 seconds
+  useEffect(() => {
+    if (!isAnimating) return;
+
+    const interval = setInterval(() => {
+      setCurrentColorIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % colorThemes.length;
+        const nextTheme = colorThemes[nextIndex];
+        applyColorTheme(nextTheme);
+        localStorage.setItem('colorIndex', nextIndex.toString());
+        return nextIndex;
+      });
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval);
+  }, [isAnimating, applyColorTheme]);
+
+  // Apply initial color on mount
+  useEffect(() => {
+    const initialTheme = colorThemes[currentColorIndex];
+    applyColorTheme(initialTheme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const toggleAnimation = () => {
+    setIsAnimating((prev) => {
+      const newValue = !prev;
+      localStorage.setItem('colorAnimation', newValue.toString());
+      return newValue;
+    });
   };
 
-  const handleColorChange = (colorValue) => {
-    setSelectedColor(colorValue);
-    applyColorTheme(colorValue);
-    localStorage.setItem('colorTheme', colorValue);
-    setIsOpen(false);
-  };
-
-  const currentTheme = colorThemes.find((t) => t.value === selectedColor) || colorThemes[0];
+  const currentTheme = colorThemes[currentColorIndex];
 
   return (
-    <div className="relative" ref={dropdownRef}>
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        aria-label="Change color theme"
-      >
+    <motion.button
+      onClick={toggleAnimation}
+      className="relative p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+      aria-label={isAnimating ? 'Stop color animation' : 'Start color animation'}
+      title={isAnimating ? 'Stop color animation' : 'Start color animation'}
+    >
+      <div className="relative">
         <div
-          className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 shadow-sm"
+          className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 shadow-sm transition-all duration-500"
           style={{ backgroundColor: currentTheme.colors[500] }}
         />
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.8 }}
-              className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-primary-500 border-2 border-white dark:border-gray-800"
-            />
-          )}
-        </AnimatePresence>
-      </motion.button>
-
-      <AnimatePresence>
-        {isOpen && (
+        {isAnimating && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            className="absolute right-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-          >
-            <div className="p-3">
-              <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-2 uppercase tracking-wide">
-                Color Theme
-              </p>
-              <div className="grid grid-cols-4 gap-2">
-                {colorThemes.map((theme) => (
-                  <button
-                    key={theme.value}
-                    onClick={() => handleColorChange(theme.value)}
-                    className="group relative p-3 rounded-lg transition-all hover:ring-2 hover:ring-offset-2 hover:ring-gray-300 dark:hover:ring-gray-600"
-                    style={{
-                      backgroundColor: theme.colors[100],
-                      ...(selectedColor === theme.value && {
-                        border: `2px solid ${theme.colors[500]}`,
-                        boxShadow: `0 0 0 2px ${theme.colors[100]}, 0 0 0 4px ${theme.colors[500]}`,
-                      }),
-                    }}
-                    title={theme.name}
-                  >
-                    <div
-                      className="w-full h-8 rounded-md shadow-sm"
-                      style={{ backgroundColor: theme.colors[500] }}
-                    />
-                    {selectedColor === theme.value && (
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        className="absolute -top-1 -right-1 w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 flex items-center justify-center"
-                        style={{ backgroundColor: theme.colors[500] }}
-                      >
-                        <svg
-                          className="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </motion.div>
-                    )}
-                    <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 text-[10px] font-medium text-gray-700 dark:text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                      {theme.name}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+            className="absolute inset-0 rounded-full border-2 border-primary-500"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.5, 0, 0.5],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          />
         )}
-      </AnimatePresence>
-    </div>
+      </div>
+      {!isAnimating && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 border-2 border-white dark:border-gray-800"
+        />
+      )}
+    </motion.button>
   );
 };
 

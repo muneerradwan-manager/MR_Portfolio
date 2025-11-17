@@ -29,7 +29,7 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 via-primary-600 to-gray-900 dark:from-gray-100 dark:via-primary-400 dark:to-gray-100 bg-clip-text text-transparent">
               {t('projects.title')}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
@@ -84,10 +84,10 @@ const Projects = () => {
                   {/* Project Content */}
                   <div className="p-6 flex-1 flex flex-col">
                     <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">
-                      {project.title}
+                      {t(`projectDetails.${project.slug}.title`, project.title)}
                     </h3>
                     <p className="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                      {project.description}
+                      {t(`projectDetails.${project.slug}.description`, project.description)}
                     </p>
 
                     {/* Technologies */}
@@ -118,7 +118,7 @@ const Projects = () => {
                           className="w-full text-sm py-2 gap-2"
                         >
                           <LinkIcon type={project.links[0].type} />
-                          {project.links[0].label}
+                          {t(`projectDetails.common.visitWebsite`, project.links[0].label)}
                         </Button>
                       )}
                     </div>
