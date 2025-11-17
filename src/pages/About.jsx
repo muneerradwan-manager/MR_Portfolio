@@ -1,36 +1,15 @@
 import { motion } from 'framer-motion';
 import Card from '../components/Card';
+import { aboutData } from '../data/about';
+import { profile } from '../data/profile';
+import { experiences } from '../data/experience';
+import { hobbies } from '../data/hobbies';
 
 const About = () => {
-  const skills = [
-    { category: 'Languages', items: ['Dart', 'JavaScript', 'TypeScript', 'Python'] },
-    { category: 'Frameworks', items: ['Flutter', 'React', 'Node.js'] },
-    { category: 'Backend', items: ['Firebase', 'REST APIs', 'GraphQL', 'Cloud Functions'] },
-    { category: 'State Management', items: ['Provider', 'Bloc', 'Riverpod', 'GetX'] },
-    { category: 'Tools', items: ['Git', 'Docker', 'CI/CD', 'VS Code', 'Android Studio'] },
-    { category: 'Design', items: ['Material Design', 'Cupertino', 'Figma', 'Adobe XD'] },
-  ];
-
-  const experiences = [
-    {
-      title: 'Senior Flutter Developer',
-      company: 'Tech Company',
-      period: '2022 - Present',
-      description: 'Leading mobile app development projects, mentoring junior developers, and architecting scalable Flutter applications.',
-    },
-    {
-      title: 'Flutter Developer',
-      company: 'Startup Inc',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple Flutter applications, integrated third-party APIs, and optimized app performance.',
-    },
-    {
-      title: 'Mobile Developer',
-      company: 'Digital Agency',
-      period: '2019 - 2020',
-      description: 'Built cross-platform mobile applications using Flutter, collaborated with designers and backend developers.',
-    },
-  ];
+  const experienceTimeline = experiences.map((exp) => ({
+    ...exp,
+    bullets: aboutData.experienceDetails[exp.id] ?? [],
+  }));
 
   return (
     <div className="min-h-screen pt-20 pb-20">
@@ -44,11 +23,23 @@ const About = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              About Me
+              {aboutData.hero.title}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Get to know more about my journey, skills, and passion for mobile development
-            </p>
+            <p className="text-xl text-gray-600 dark:text-gray-300">{aboutData.hero.subtitle}</p>
+            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">{aboutData.hero.summary}</p>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {aboutData.contact.map((contact) => (
+                <a
+                  key={contact.label}
+                  href={contact.href}
+                  className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-200 shadow-sm hover:shadow"
+                >
+                  <span className="font-semibold">{contact.label}:</span>
+                  <span>{contact.value}</span>
+                </a>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -66,30 +57,22 @@ const About = () => {
             >
               <h2 className="text-3xl font-bold mb-6 text-gray-900 dark:text-gray-100">My Story</h2>
               <div className="space-y-4 text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                <p>
-                  Hello! I'm Muneer Radwan, a passionate Flutter developer with a love for creating 
-                  beautiful and functional mobile applications. My journey in mobile development began 
-                  when I discovered the power of Flutter to build cross-platform apps with a single codebase.
-                </p>
-                <p>
-                  Over the years, I've had the opportunity to work on various projects ranging from 
-                  e-commerce applications to social media platforms, each teaching me something new 
-                  about mobile development, user experience, and scalable architecture.
-                </p>
-                <p>
-                  I believe in writing clean, maintainable code and following best practices. I'm 
-                  constantly learning and staying up-to-date with the latest Flutter updates and 
-                  mobile development trends. When I'm not coding, I enjoy contributing to open-source 
-                  projects, writing technical articles, and sharing knowledge with the developer community.
-                </p>
-                <p>
-                  My goal is to create mobile applications that not only look great but also provide 
-                  exceptional user experiences. I'm always excited to take on new challenges and 
-                  collaborate on innovative projects.
-                </p>
+                {aboutData.story.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
             </motion.div>
           </Card>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {aboutData.stats.map((stat) => (
+              <Card key={stat.label} className="p-6 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700">
+                <p className="text-xs uppercase tracking-[0.4em] text-primary-500">{stat.label}</p>
+                <p className="text-3xl font-semibold text-gray-900 dark:text-gray-100 mt-2">{stat.value}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">{stat.detail}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -104,33 +87,33 @@ const About = () => {
           >
             Skills & Technologies
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6">
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-                    {skill.category}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {skill.items.map((item) => (
-                      <span
-                        key={item}
-                        className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+          <Card className="p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
+                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Core Skills</p>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {profile.skills.map((skill) => (
+                    <div key={skill} className="flex items-start gap-3">
+                      <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
+                      <p className="text-gray-700 dark:text-gray-200 text-sm">{skill}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Languages</p>
+                <div className="space-y-3">
+                  {profile.languages.map((language) => (
+                    <div key={language.name}>
+                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">{language.name}</p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{language.level}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
 
@@ -146,29 +129,101 @@ const About = () => {
             Experience
           </motion.h2>
           <div className="max-w-4xl mx-auto space-y-8">
-            {experiences.map((exp, index) => (
+            {experienceTimeline.map((exp, index) => (
               <motion.div
-                key={index}
+                key={exp.id}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
+                transition={{ delay: index * 0.15 }}
               >
                 <Card className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                        {exp.title}
-                      </h3>
-                      <p className="text-lg text-primary-600 dark:text-primary-400 font-semibold">
-                        {exp.company}
+                      <p className="text-xs uppercase tracking-[0.3em] text-primary-500">{exp.role}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{exp.company}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
+                        {exp.startDate} – {exp.endDate}
+                      </p>
+                      <p className="text-xs uppercase tracking-[0.25em] text-gray-400">{exp.employmentType}</p>
+                    </div>
+                  </div>
+                  {exp.bullets?.length > 0 && (
+                    <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+                      {exp.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <Card className="p-8 bg-white dark:bg-gray-900">
+              <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">Education</p>
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{profile.education.degree}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{profile.education.institution}</p>
+                </div>
+                <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">{profile.education.years}</p>
+              </div>
+              <div className="mt-6 space-y-3 text-sm text-gray-600 dark:text-gray-300">
+                {profile.education.highlights.map((highlight) => (
+                  <p key={highlight}>{highlight}</p>
+                ))}
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Hobbies Section */}
+      <section className="py-16">
+        <div className="container-custom">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
+          >
+            Hobbies & Interests
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {hobbies.map((hobby, index) => (
+              <motion.div
+                key={hobby.category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="p-6 h-full text-center hover:shadow-lg transition-shadow">
+                  <div className="text-4xl mb-4">{hobby.icon}</div>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                    {hobby.category}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                    {hobby.description}
+                  </p>
+                  {hobby.favorite && (
+                    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                      <p className="text-xs uppercase tracking-[0.2em] text-primary-500 mb-1">Favorite</p>
+                      <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
+                        {hobby.favorite}
                       </p>
                     </div>
-                    <span className="text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
-                      {exp.period}
-                    </span>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
+                  )}
                 </Card>
               </motion.div>
             ))}

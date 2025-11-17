@@ -1,4 +1,4 @@
-# Muneer Radwan - Flutter Developer Portfolio
+# Muneer Radwan - Mid-Level Flutter Developer Portfolio
 
 A modern, responsive portfolio website built with React and Vite, showcasing Flutter applications and development skills. Features a clean UI with dark/light theme support, smooth animations, and a fully responsive design.
 

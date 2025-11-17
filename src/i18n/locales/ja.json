@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "projects": "プロジェクト",
+    "about": "私について",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "hero": {
+      "badge": "Flutter開発者",
+      "headline": "こんにちは、Muneer Radwanです",
+      "lead": "Flutterで美しく高性能なモバイルアプリケーションを構築しています",
+      "description": "シームレスなユーザー体験の創造と複雑な問題に対するエレガントなソリューションの作成に情熱を注いでいます。Flutter & Dartを使用したクロスプラットフォームモバイル開発の専門家です。",
+      "primaryCta": "作品を見る",
+      "secondaryCta": "お問い合わせ"
+    }
+  },
+  "projects": {
+    "title": "私のプロジェクト",
+    "description": "私が構築したFlutterアプリケーションのコレクションで、モバイル開発、UI/UXデザイン、問題解決のスキルを紹介しています。",
+    "viewDetails": "詳細を見る"
+  },
+  "about": {
+    "hero": {
+      "title": "私について",
+      "subtitle": "情報技術エンジニア & Flutter開発者",
+      "summary": "UX計画と状態管理から消費者ストアへの展開まで、Flutterアプリケーションを最初から最後まで作成します—エンジニアの規律と製品の本能を融合させます。"
+    },
+    "story": {
+      "title": "私の物語",
+      "paragraph1": "私はMuneer Radwanで、単一のツールキットで洗練されたクロスプラットフォーム体験を設計できるようにしたため、Flutter開発に移行した情報技術エンジニアです。過去2年間で、eコマース、法務技術、サービスマーケットプレイス、生産性ツールにまたがる商用アプリを構築してきました。",
+      "paragraph2": "私の履歴書の旅は、私が気にかけていることを強調しています：ネットワーキングとシステムの厳密さ、代理店や技術チーム内での実際の出荷経験、UIの仕上げから通知配管、分析、リリース自動化まで移動する能力。",
+      "paragraph3": "私は、パフォーマンスとエンドユーザーへの共感の両方を要求する製品に動機付けられています—深刻なビジネスワークフローを処理しながら美しく感じられるアプリ。"
+    },
+    "stats": {
+      "experience": {
+        "label": "経験",
+        "value": "3年以上",
+        "detail": "モバイル、ウェブ、デスクトップ表面でのFlutter & Dartの提供。"
+      },
+      "roles": {
+        "label": "役割",
+        "value": "モバイルアプリ開発者",
+        "detail": "HomeTecs · FH Team · Beta · UCT"
+      },
+      "focus": {
+        "label": "焦点",
+        "value": "製品レベルのアプリ",
+        "detail": "UI/UXシステム、状態管理、リアルタイム統合。"
+      }
+    },
+    "skills": {
+      "title": "スキルと技術",
+      "coreSkills": "コアスキル",
+      "languages": "言語"
+    },
+    "experience": {
+      "title": "経験"
+    },
+    "education": {
+      "title": "教育"
+    },
+    "hobbies": {
+      "title": "趣味と興味"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "お問い合わせ",
+      "description": "プロジェクトをお考えですか、それとも協力したいですか？お聞かせください！"
+    },
+    "intro": "これらのチャネルのいずれかからお気軽にご連絡ください。通常24時間以内に返信いたします。",
+    "form": {
+      "title": "メッセージを送信",
+      "name": "名前",
+      "namePlaceholder": "お名前",
+      "email": "メール",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "メッセージ",
+      "messagePlaceholder": "メッセージ...",
+      "submit": "メッセージを送信",
+      "sending": "送信中...",
+      "success": "メッセージが正常に送信されました！すぐに返信いたします。",
+      "error": "メッセージの送信に失敗しました。もう一度お試しいただくか、メールで直接お問い合わせください。"
+    },
+    "channels": {
+      "email": "メール",
+      "phone": "電話 / WhatsApp",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "callout": {
+      "title": "一緒に働きましょう",
+      "description": "新しいプロジェクト、創造的なアイデア、またはあなたのビジョンの一部になる機会について議論することに常にオープンです。",
+      "action": "会話を始める"
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "Muneer Radwan",
+      "description": "美しく機能的なモバイルアプリケーションを作成することに情熱を注ぐFlutter開発者。"
+    },
+    "quickLinks": "クイックリンク",
+    "connect": "接続"
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "close": "閉じる"
+  }
+}
+

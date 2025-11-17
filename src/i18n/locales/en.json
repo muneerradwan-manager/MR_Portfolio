@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "badge": "Mid-Level Flutter Developer",
+      "headline": "Hi, I'm Muneer Radwan",
+      "lead": "I build beautiful, performant mobile applications with Flutter",
+      "description": "Passionate about creating seamless user experiences and crafting elegant solutions to complex problems. Specialized in cross-platform mobile development with Flutter & Dart.",
+      "primaryCta": "View My Work",
+      "secondaryCta": "Get In Touch"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "description": "A collection of Flutter applications I've built, showcasing my skills in mobile development, UI/UX design, and problem-solving.",
+    "viewDetails": "View Details"
+  },
+  "about": {
+    "hero": {
+      "title": "About Me",
+      "subtitle": "Information Technology Engineer & Mid-Level Flutter Developer",
+      "summary": "I craft Flutter applications end-to-end—from UX planning and state management to deployment on consumer stores—blending an engineer's discipline with product instincts."
+    },
+    "story": {
+      "title": "My Story",
+      "paragraph1": "I'm Muneer Radwan, an Information Technology engineer who moved into Flutter development because it let me design polished cross-platform experiences with a single toolkit. Over the past two years I've built commercial apps that span e-commerce, legal-tech, service marketplaces, and productivity tooling.",
+      "paragraph2": "My CV journey highlights the things I care about: rigor in networking and systems, real-world shipping experience inside agencies and tech teams, and the ability to move from UI polish all the way down to notification plumbing, analytics, and release automation.",
+      "paragraph3": "I'm motivated by products that demand both performance and empathy for end users—apps that feel beautiful while handling serious business workflows."
+    },
+    "stats": {
+      "experience": {
+        "label": "Experience",
+        "value": "3+ years",
+        "detail": "Flutter & Dart delivery across mobile, web, and desktop surfaces."
+      },
+      "roles": {
+        "label": "Roles",
+        "value": "Mobile App Developer",
+        "detail": "HomeTecs · FH Team · Beta · UCT"
+      },
+      "focus": {
+        "label": "Focus",
+        "value": "Product-grade apps",
+        "detail": "UI/UX systems, state management, and real-time integrations."
+      }
+    },
+    "skills": {
+      "title": "Skills & Technologies",
+      "coreSkills": "Core Skills",
+      "languages": "Languages"
+    },
+    "experience": {
+      "title": "Experience"
+    },
+    "education": {
+      "title": "Education"
+    },
+    "hobbies": {
+      "title": "Hobbies & Interests"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "Get In Touch",
+      "description": "Have a project in mind or want to collaborate? I'd love to hear from you!"
+    },
+    "intro": "Feel free to reach out through any of these channels. I typically respond within 24 hours.",
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully! I'll get back to you soon.",
+      "error": "Failed to send message. Please try again or contact me directly via email."
+    },
+    "channels": {
+      "email": "Email",
+      "phone": "Phone / WhatsApp",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "callout": {
+      "title": "Let's Work Together",
+      "description": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+      "action": "Start a Conversation"
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "Muneer Radwan",
+      "description": "Mid-Level Flutter Developer passionate about creating beautiful and functional mobile applications."
+    },
+    "quickLinks": "Quick Links",
+    "connect": "Connect"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "close": "Close"
+  }
+}
+

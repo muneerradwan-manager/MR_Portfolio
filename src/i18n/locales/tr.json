@@ -1,0 +1,113 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "projects": "Projeler",
+    "about": "Hakkımda",
+    "contact": "İletişim"
+  },
+  "home": {
+    "hero": {
+      "badge": "Flutter Geliştirici",
+      "headline": "Merhaba, Ben Muneer Radwan",
+      "lead": "Flutter ile güzel, performanslı mobil uygulamalar geliştiriyorum",
+      "description": "Kesintisiz kullanıcı deneyimleri oluşturmaya ve karmaşık sorunlara zarif çözümler üretmeye tutkulu. Flutter & Dart ile çapraz platform mobil geliştirme konusunda uzman.",
+      "primaryCta": "Çalışmalarımı Gör",
+      "secondaryCta": "İletişime Geç"
+    }
+  },
+  "projects": {
+    "title": "Projelerim",
+    "description": "Mobil geliştirme, UI/UX tasarımı ve problem çözme becerilerimi sergileyen, oluşturduğum Flutter uygulamalarının bir koleksiyonu.",
+    "viewDetails": "Detayları Gör"
+  },
+  "about": {
+    "hero": {
+      "title": "Hakkımda",
+      "subtitle": "Bilgi Teknolojileri Mühendisi & Flutter Geliştirici",
+      "summary": "UX planlaması ve durum yönetiminden tüketici mağazalarına dağıtıma kadar Flutter uygulamalarını baştan sona oluşturuyorum—bir mühendisin disiplini ile ürün içgüdülerini harmanlıyorum."
+    },
+    "story": {
+      "title": "Hikayem",
+      "paragraph1": "Ben Muneer Radwan, tek bir araç seti ile cilalı çapraz platform deneyimleri tasarlamama izin verdiği için Flutter geliştirmeye geçen bir Bilgi Teknolojileri mühendisiyim. Son iki yılda e-ticaret, hukuk teknolojisi, hizmet pazarları ve üretkenlik araçlarını kapsayan ticari uygulamalar oluşturdum.",
+      "paragraph2": "Özgeçmiş yolculuğum, önemsediğim şeyleri vurguluyor: ağ ve sistemlerde titizlik, ajanslar ve teknoloji ekipleri içindeki gerçek dünya sevkiyat deneyimi ve UI cilalamadan bildirim tesisatı, analitik ve sürüm otomasyonuna kadar hareket etme yeteneği.",
+      "paragraph3": "Hem performans hem de son kullanıcılar için empati talep eden ürünlerden motive oluyorum—ciddi iş akışlarını ele alırken güzel hisseden uygulamalar."
+    },
+    "stats": {
+      "experience": {
+        "label": "Deneyim",
+        "value": "3+ yıl",
+        "detail": "Mobil, web ve masaüstü yüzeylerinde Flutter & Dart teslimatı."
+      },
+      "roles": {
+        "label": "Roller",
+        "value": "Mobil Uygulama Geliştirici",
+        "detail": "HomeTecs · FH Team · Beta · UCT"
+      },
+      "focus": {
+        "label": "Odak",
+        "value": "Ürün düzeyinde uygulamalar",
+        "detail": "UI/UX sistemleri, durum yönetimi ve gerçek zamanlı entegrasyonlar."
+      }
+    },
+    "skills": {
+      "title": "Beceri ve Teknolojiler",
+      "coreSkills": "Temel Beceriler",
+      "languages": "Diller"
+    },
+    "experience": {
+      "title": "Deneyim"
+    },
+    "education": {
+      "title": "Eğitim"
+    },
+    "hobbies": {
+      "title": "Hobiler ve İlgi Alanları"
+    }
+  },
+  "contact": {
+    "hero": {
+      "title": "İletişime Geç",
+      "description": "Aklınızda bir proje var mı yoksa işbirliği yapmak ister misiniz? Sizden haber almayı çok isterim!"
+    },
+    "intro": "Bu kanallardan herhangi biri aracılığıyla iletişime geçmekten çekinmeyin. Genellikle 24 saat içinde yanıt veririm.",
+    "form": {
+      "title": "Mesaj Gönder",
+      "name": "İsim",
+      "namePlaceholder": "Adınız",
+      "email": "E-posta",
+      "emailPlaceholder": "your.email@example.com",
+      "message": "Mesaj",
+      "messagePlaceholder": "Mesajınız...",
+      "submit": "Mesaj Gönder",
+      "sending": "Gönderiliyor...",
+      "success": "Mesaj başarıyla gönderildi! Yakında size döneceğim.",
+      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin veya doğrudan e-posta ile iletişime geçin."
+    },
+    "channels": {
+      "email": "E-posta",
+      "phone": "Telefon / WhatsApp",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "instagram": "Instagram"
+    },
+    "callout": {
+      "title": "Birlikte Çalışalım",
+      "description": "Yeni projeler, yaratıcı fikirler veya vizyonunuzun bir parçası olma fırsatları hakkında tartışmaya her zaman açığım.",
+      "action": "Sohbet Başlat"
+    }
+  },
+  "footer": {
+    "brand": {
+      "name": "Muneer Radwan",
+      "description": "Güzel ve işlevsel mobil uygulamalar oluşturmaya tutkulu Flutter geliştirici."
+    },
+    "quickLinks": "Hızlı Bağlantılar",
+    "connect": "Bağlan"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "close": "Kapat"
+  }
+}
+

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { projects } from "../data/projects";
+import { projectsPageContent } from "../data/projectsPage";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import LinkIcon from "../components/LinkIcon";
@@ -27,11 +28,10 @@ const Projects = () => {
             className="text-center max-w-3xl mx-auto"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900 dark:text-gray-100">
-              My Projects
+              {projectsPageContent.title}
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300">
-              A collection of Flutter applications I've built, showcasing my
-              skills in mobile development, UI/UX design, and problem-solving.
+              {projectsPageContent.description}
             </p>
           </motion.div>
         </div>
