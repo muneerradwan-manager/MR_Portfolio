@@ -270,23 +270,24 @@ const ProjectDetails = () => {
 
             {metrics.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-                {metrics.map((metric, index) => {
-                  const metricKeys = project.slug === 'medtour' 
-                    ? ['userRoles', 'languages', 'platforms']
-                    : ['coreModules', 'channels', 'platforms'];
-                  const valueKeys = project.slug === 'medtour'
-                    ? ['userRolesValue', 'languagesValue', 'platformsValue']
-                    : ['coreModulesValue', 'channelsValue', 'platformsValue'];
+                {metrics.map((metric) => {
+                  const valueKey = metric.valueKey
+                    ? `projectDetails.${project.slug}.metrics.${metric.valueKey}`
+                    : null;
+                  const labelKey = metric.labelKey
+                    ? `projectDetails.${project.slug}.metrics.${metric.labelKey}`
+                    : null;
+
                   return (
                     <div
-                      key={metric.label}
+                      key={metric.labelKey ?? metric.label}
                       className="rounded-2xl bg-white/10 px-4 py-6 text-center border border-white/10"
                     >
                       <p className="text-3xl font-semibold">
-                        {t(`projectDetails.${project.slug}.metrics.${valueKeys[index]}`, metric.value)}
+                        {valueKey ? t(valueKey, metric.value) : metric.value}
                       </p>
                       <p className="text-white/70 text-sm uppercase tracking-widest mt-1">
-                        {t(`projectDetails.${project.slug}.metrics.${metricKeys[index]}`, metric.label)}
+                        {labelKey ? t(labelKey, metric.label) : metric.label}
                       </p>
                     </div>
                   );
@@ -409,26 +410,31 @@ const ProjectDetails = () => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {caseStudy.userRoles.map((role, roleIndex) => {
-                const roleKeys = project.slug === 'medtour'
-                  ? ['admin', 'centerOwner', 'hotelOwner', 'doctor', 'customer']
-                  : ['careCoordinator', 'caseManager', 'clinician'];
-                const roleKey = roleKeys[roleIndex];
+                const roleKey = role.translationKey
+                  ? `projectDetails.${project.slug}.caseStudy.userRoles.${role.translationKey}`
+                  : null;
+
                 return (
-                  <Card key={role.name} className="p-6 flex flex-col h-full">
+                  <Card key={`${role.translationKey ?? roleIndex}-${role.name}`} className="p-6 flex flex-col h-full">
                     <div className="mb-4">
                       <p className="text-xs uppercase tracking-[0.3em] text-primary-500">
-                        {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.name`, role.name)}
+                        {roleKey ? t(`${roleKey}.name`, role.name) : role.name}
                       </p>
                       <p className="text-lg font-semibold text-gray-900 dark:text-gray-100 mt-1">
-                        {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.summary`, role.summary)}
+                        {roleKey ? t(`${roleKey}.summary`, role.summary) : role.summary}
                       </p>
                     </div>
                     <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300 list-disc list-inside">
-                      {role.capabilities.map((capability, capIndex) => (
-                        <li key={capability}>
-                          {t(`projectDetails.${project.slug}.caseStudy.userRoles.${roleKey}.capabilities.${capIndex}`, capability)}
-                        </li>
-                      ))}
+                      {role.capabilities.map((capability, capIndex) => {
+                        const capabilityKey = roleKey
+                          ? `${roleKey}.capabilities.${capIndex}`
+                          : null;
+                        return (
+                          <li key={`${capabilityKey ?? capIndex}-${capability}`}>
+                            {capabilityKey ? t(capabilityKey, capability) : capability}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </Card>
                 );

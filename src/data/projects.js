@@ -48,11 +48,31 @@ export const projects = [
         type: "web",
         href: "https://medtour.sy/",
       },
+      {
+        label: "Google Drive",
+        type: "drive",
+        href: "https://drive.google.com/file/d/11c0t7kSJRJzc2LhJbvZAcK5ejKnzY6Qo/view?usp=drive_link",
+      },
     ],
     metrics: [
-      { label: "User Roles", value: "5 personas" },
-      { label: "Languages", value: "11 locales" },
-      { label: "Platforms", value: "iOS · Android" },
+      {
+        labelKey: "userRoles",
+        label: "User Roles",
+        valueKey: "userRolesValue",
+        value: "5 personas",
+      },
+      {
+        labelKey: "languages",
+        label: "Languages",
+        valueKey: "languagesValue",
+        value: "11 locales",
+      },
+      {
+        labelKey: "platforms",
+        label: "Platforms",
+        valueKey: "platformsValue",
+        value: "iOS · Android",
+      },
     ],
     deliverables: [
       "Marketing landing experience",
@@ -113,6 +133,7 @@ export const projects = [
       ],
       userRoles: [
         {
+          translationKey: "admin",
           name: "Admin",
           summary:
             "Full control over people, permissions, and platform content.",
@@ -123,6 +144,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "centerOwner",
           name: "Center Owner",
           summary:
             "Manages clinics, doctors, departments, and medical services.",
@@ -133,6 +155,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "hotelOwner",
           name: "Hotel Owner",
           summary:
             "Operates hospitality inventory tightly linked to medical trips.",
@@ -143,6 +166,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "doctor",
           name: "Doctor",
           summary: "Keeps personal profiles and schedules current.",
           capabilities: [
@@ -152,6 +176,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "customer",
           name: "Customer",
           summary: "Explores services and orchestrates travel logistics.",
           capabilities: [
@@ -244,11 +269,31 @@ export const projects = [
         type: "web",
         href: "https://ovacs.com/",
       },
+      {
+        label: "Google Drive",
+        type: "drive",
+        href: "https://drive.google.com/file/d/159eYvpXihdgf2bP0Lb6oGfryPFX1r4vM/view?usp=drive_link",
+      },
     ],
     metrics: [
-      { label: "Core Modules", value: "10+" },
-      { label: "Channels", value: "Push · Email · SMS" },
-      { label: "Platforms", value: "iOS · Android · Tablet" },
+      {
+        labelKey: "coreModules",
+        label: "Core Modules",
+        valueKey: "coreModulesValue",
+        value: "10+",
+      },
+      {
+        labelKey: "channels",
+        label: "Channels",
+        valueKey: "channelsValue",
+        value: "Push · Email · SMS",
+      },
+      {
+        labelKey: "platforms",
+        label: "Platforms",
+        valueKey: "platformsValue",
+        value: "iOS · Android · Tablet",
+      },
     ],
     deliverables: [
       "Role-aware mobile suite",
@@ -308,6 +353,7 @@ export const projects = [
       ],
       userRoles: [
         {
+          translationKey: "careCoordinator",
           name: "Care Coordinator",
           summary:
             "Owns day-to-day relationships, assignments, and follow-ups.",
@@ -318,6 +364,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "caseManager",
           name: "Case Manager",
           summary: "Runs cases, sessions, and documentation throughput.",
           capabilities: [
@@ -327,6 +374,7 @@ export const projects = [
           ],
         },
         {
+          translationKey: "clinician",
           name: "Clinician",
           summary:
             "Delivers care, communicates, and keeps profile/security data current.",
@@ -367,6 +415,191 @@ export const projects = [
           "Offline mode caches lists and queues pending actions",
           "Accessibility via font scaling, screen reader labels, and high-contrast theme",
           "Audit-ready logging across every add/edit/delete event",
+        ],
+      },
+    },
+    featured: true,
+  },
+  {
+    id: 3,
+    title: "AutoLakta",
+    slug: "autolakta",
+    tagline: "Automotive marketplace for buyers, sellers, and admins",
+    industry: "Automotive Marketplace / Mobility Commerce",
+    description:
+      "AutoLakta unifies car shoppers, business sellers, advertisers, and platform administrators inside a multilingual Flutter experience that blends catalog discovery, seller storefront tooling, and governance-grade admin consoles.",
+    technologies: [
+      "flutter",
+      "get",
+      "dio",
+      "get_storage",
+      "cached_network_image",
+      "intl",
+      "connectivity_plus",
+      "jwt_decoder",
+      "lottie",
+      "carousel_slider",
+      "smooth_page_indicator",
+      "flutter_svg",
+      "shimmer",
+      "readmore",
+      "flutter_colorpicker",
+      "image_picker",
+      "image_cropper",
+    ],
+    brand: {
+      accent: "#E1622B",
+      logo: null,
+      icon: null,
+    },
+    screenshots: [],
+    links: [],
+    metrics: [
+      {
+        labelKey: "personas",
+        label: "Personas",
+        valueKey: "personasValue",
+        value: "4 roles",
+      },
+      {
+        labelKey: "locales",
+        label: "Locales",
+        valueKey: "localesValue",
+        value: "5 languages",
+      },
+      {
+        labelKey: "platforms",
+        label: "Platforms",
+        valueKey: "platformsValue",
+        value: "iOS · Android · Web",
+      },
+    ],
+    deliverables: [
+      "Buyer marketplace and advanced search",
+      "Seller storefronts and ad tooling",
+      "Admin governance console",
+    ],
+    caseStudy: {
+      summary: [
+        {
+          title: "Challenge",
+          body: "Dealers, advertisers, and admins were juggling fragmented tools to grow inventory while shoppers expected a modern, mobile-first buying experience with filters, media-rich listings, and transparent operations.",
+        },
+        {
+          title: "Solution",
+          body: "AutoLakta ships as a feature-first Flutter workspace with onboarding, advanced discovery, seller dashboards, advertiser flows, and admin governance modules powered by GetX, Dio, and secure local persistence.",
+        },
+      ],
+      highlights: [
+        {
+          title: "Guided onboarding & authentication",
+          description:
+            "Splash, onboarding, and email/phone authentication with JWT sessions, GetStorage persistence, and OAuth-ready UI components.",
+        },
+        {
+          title: "Advanced catalog discovery",
+          description:
+            "Buyers search and filter by brand, model, drivetrain, transmission, price, and category with live counts, removable chips, and resilient empty states.",
+        },
+        {
+          title: "Seller & admin toolkits",
+          description:
+            "Business profiles, seller dashboards, ad editors, and admin CRUD consoles for brands, fuels, transmissions, and advertiser accounts.",
+        },
+      ],
+      userJourney: [
+        {
+          title: "Onboarding & setup",
+          steps: [
+            "Splash and onboarding sequences introduce the marketplace brand story.",
+            "Users authenticate via phone/email with JWT-backed sessions and post-verification messaging.",
+          ],
+        },
+        {
+          title: "Discover & shortlist",
+          steps: [
+            "Home hero surfaces featured cars, business highlights, and promotional sliders.",
+            "Advanced filters and wishlists help shoppers curate and revisit vehicles.",
+          ],
+        },
+        {
+          title: "Operate & govern",
+          steps: [
+            "Sellers update storefronts, manage stock, and launch promotions.",
+            "Admins verify listings, approve brands/models, and monitor platform data quality.",
+          ],
+        },
+      ],
+      userRoles: [
+        {
+          translationKey: "carShopper",
+          name: "Car Shopper",
+          summary: "Explores inventory, saves favorites, and requests follow-ups.",
+          capabilities: [
+            "Search, filter, and compare vehicles across categories.",
+            "Wishlist management with notifications for promo updates.",
+            "Detailed car screens with specs, media galleries, and reviews.",
+          ],
+        },
+        {
+          translationKey: "businessSeller",
+          name: "Business Seller",
+          summary: "Maintains storefronts, listings, and pricing strategies.",
+          capabilities: [
+            "Profile editing with media, geolocation, and contact data.",
+            "Ad creation/editing with media upload and pricing tools.",
+            "Stock dashboards with quick actions for publishing or pausing vehicles.",
+          ],
+        },
+        {
+          translationKey: "advertiser",
+          name: "Advertiser",
+          summary: "Highlights campaigns and monitors performance.",
+          capabilities: [
+            "Promotion management with banner scheduling and highlights.",
+            "Insight cards that track impressions, leads, and engagement.",
+            "Collaboration workflows with platform administrators.",
+          ],
+        },
+        {
+          translationKey: "platformAdmin",
+          name: "Platform Admin",
+          summary: "Stewards catalog integrity and user governance.",
+          capabilities: [
+            "CRUD consoles for brands, models, fuels, and transmissions.",
+            "Advertiser verification and account lifecycle controls.",
+            "Global monitors for offline states, errors, and support tickets.",
+          ],
+        },
+      ],
+      flow: [
+        {
+          title: "Onboarding funnel",
+          steps: [
+            "Splash → onboarding carousel → auth selection (email/phone/OAuth) → verification → personalized home.",
+            "Session guard persists tokens via GetStorage and skips redundant logins.",
+          ],
+        },
+        {
+          title: "Catalog governance",
+          steps: [
+            "Admins curate core datasets before listings go live.",
+            "Advertisers and sellers submit updates which route through approval workflows with status badges.",
+          ],
+        },
+      ],
+      technical: {
+        architecture: [
+          "Feature-first folder structure for auth, home, search, store, admin, seller, wishlist, and settings domains.",
+          "GetX controllers orchestrate navigation, dependency injection, and reactive state.",
+          "Dio client with interceptors, repository layer, and JWT parsing keeps networking cleanly separated.",
+          "Shared components, theme tokens, and bindings wire reusable UI primitives across modules.",
+        ],
+        experience: [
+          "Cairo font family and bilingual localization powered by GetX translations.",
+          "Light/dark theming with shared design tokens and runtime switching.",
+          "Global connectivity monitor, shimmer placeholders, snackbars, and loaders standardize UX feedback.",
+          "Image picker + cropper utilities ensure sellers publish high-quality media.",
         ],
       },
     },

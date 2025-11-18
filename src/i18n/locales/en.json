@@ -407,7 +407,143 @@
             "3": "Audit-ready logging across every add/edit/delete event"
           }
         }
+    },
+    "autolakta": {
+      "title": "AutoLakta",
+      "tagline": "Automotive marketplace for buyers, sellers, and admins",
+      "industry": "Automotive Marketplace / Mobility Commerce",
+      "description": "AutoLakta unifies car shoppers, business sellers, advertisers, and platform administrators inside a multilingual Flutter experience that blends catalog discovery, seller storefront tooling, and governance-grade admin consoles.",
+      "metrics": {
+        "personas": "Personas",
+        "personasValue": "4 roles",
+        "locales": "Locales",
+        "localesValue": "5 languages",
+        "platforms": "Platforms",
+        "platformsValue": "iOS · Android · Web"
+      },
+      "deliverables": {
+        "0": "Buyer marketplace and advanced search",
+        "1": "Seller storefronts and ad tooling",
+        "2": "Admin governance console"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "Challenge",
+            "body": "Dealers, advertisers, and admins were juggling fragmented tools to grow inventory while shoppers expected a modern, mobile-first buying experience with filters, media-rich listings, and transparent operations."
+          },
+          "solution": {
+            "title": "Solution",
+            "body": "AutoLakta ships as a feature-first Flutter workspace with onboarding, advanced discovery, seller dashboards, advertiser flows, and admin governance modules powered by GetX, Dio, and secure local persistence."
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "Guided onboarding & authentication",
+            "description": "Splash, onboarding, and email/phone authentication with JWT sessions, GetStorage persistence, and OAuth-ready UI components."
+          },
+          "1": {
+            "title": "Advanced catalog discovery",
+            "description": "Buyers search and filter by brand, model, drivetrain, transmission, price, and category with live counts, removable chips, and resilient empty states."
+          },
+          "2": {
+            "title": "Seller & admin toolkits",
+            "description": "Business profiles, seller dashboards, ad editors, and admin CRUD consoles for brands, fuels, transmissions, and advertiser accounts."
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Onboarding & setup",
+            "steps": {
+              "0": "Splash and onboarding sequences introduce the marketplace brand story.",
+              "1": "Users authenticate via phone/email with JWT-backed sessions and post-verification messaging."
+            }
+          },
+          "1": {
+            "title": "Discover & shortlist",
+            "steps": {
+              "0": "Home hero surfaces featured cars, business highlights, and promotional sliders.",
+              "1": "Advanced filters and wishlists help shoppers curate and revisit vehicles."
+            }
+          },
+          "2": {
+            "title": "Operate & govern",
+            "steps": {
+              "0": "Sellers update storefronts, manage stock, and launch promotions.",
+              "1": "Admins verify listings, approve brands/models, and monitor platform data quality."
+            }
+          }
+        },
+        "userRoles": {
+          "carShopper": {
+            "name": "Car Shopper",
+            "summary": "Explores inventory, saves favorites, and requests follow-ups.",
+            "capabilities": {
+              "0": "Search, filter, and compare vehicles across categories.",
+              "1": "Wishlist management with notifications for promo updates.",
+              "2": "Detailed car screens with specs, media galleries, and reviews."
+            }
+          },
+          "businessSeller": {
+            "name": "Business Seller",
+            "summary": "Maintains storefronts, listings, and pricing strategies.",
+            "capabilities": {
+              "0": "Profile editing with media, geolocation, and contact data.",
+              "1": "Ad creation/editing with media upload and pricing tools.",
+              "2": "Stock dashboards with quick actions for publishing or pausing vehicles."
+            }
+          },
+          "advertiser": {
+            "name": "Advertiser",
+            "summary": "Highlights campaigns and monitors performance.",
+            "capabilities": {
+              "0": "Promotion management with banner scheduling and highlights.",
+              "1": "Insight cards that track impressions, leads, and engagement.",
+              "2": "Collaboration workflows with platform administrators."
+            }
+          },
+          "platformAdmin": {
+            "name": "Platform Admin",
+            "summary": "Stewards catalog integrity and user governance.",
+            "capabilities": {
+              "0": "CRUD consoles for brands, models, fuels, and transmissions.",
+              "1": "Advertiser verification and account lifecycle controls.",
+              "2": "Global monitors for offline states, errors, and support tickets."
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Onboarding funnel",
+            "steps": {
+              "0": "Splash → onboarding carousel → auth selection (email/phone/OAuth) → verification → personalized home.",
+              "1": "Session guard persists tokens via GetStorage and skips redundant logins."
+            }
+          },
+          "1": {
+            "title": "Catalog governance",
+            "steps": {
+              "0": "Admins curate core datasets before listings go live.",
+              "1": "Advertisers and sellers submit updates which route through approval workflows with status badges."
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "Feature-first folder structure for auth, home, search, store, admin, seller, wishlist, and settings domains.",
+            "1": "GetX controllers orchestrate navigation, dependency injection, and reactive state.",
+            "2": "Dio client with interceptors, repository layer, and JWT parsing keeps networking cleanly separated.",
+            "3": "Shared components, theme tokens, and bindings wire reusable UI primitives across modules."
+          },
+          "experience": {
+            "0": "Cairo font family and bilingual localization powered by GetX translations.",
+            "1": "Light/dark theming with shared design tokens and runtime switching.",
+            "2": "Global connectivity monitor, shimmer placeholders, snackbars, and loaders standardize UX feedback.",
+            "3": "Image picker + cropper utilities ensure sellers publish high-quality media."
+          }
+        }
       }
+    }
     }
   }
 }
