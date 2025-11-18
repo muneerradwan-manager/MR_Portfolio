@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "MedTour.sy",
-    slug: "medtour",
+    slug: "medtour.sy - medical tourism OS for patients, partners, and coordinators",
     tagline: "Medical tourism OS for patients, partners, and coordinators",
     industry: "Medical Tourism / Marketplace",
     description:
@@ -223,7 +223,7 @@ export const projects = [
   {
     id: 2,
     title: "OVACS Mobile Suite",
-    slug: "ovacs",
+    slug: "ovacs - case, client, session and document management system",
     tagline:
       "One command center for coordinators, case managers, and clinicians",
     industry: "Case, Client, Session And Document Management System",
@@ -423,7 +423,7 @@ export const projects = [
   {
     id: 3,
     title: "AutoLakta",
-    slug: "autolakta",
+    slug: "autolakta - car marketplace for buyers, sellers, and admins",
     tagline: "Automotive marketplace for buyers, sellers, and admins",
     industry: "Automotive Marketplace / Mobility Commerce",
     description:
@@ -534,7 +534,8 @@ export const projects = [
         {
           translationKey: "carShopper",
           name: "Car Shopper",
-          summary: "Explores inventory, saves favorites, and requests follow-ups.",
+          summary:
+            "Explores inventory, saves favorites, and requests follow-ups.",
           capabilities: [
             "Search, filter, and compare vehicles across categories.",
             "Wishlist management with notifications for promo updates.",
