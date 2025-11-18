@@ -1,6 +1,6 @@
 export const aboutData = {
   hero: {
-    title: "About Me",
+    title: "About Me ",
     subtitle: "Information Technology Engineer & Mid-Level Flutter Developer",
     summary:
       "I craft Flutter applications end-to-end—from UX planning and state management to deployment on consumer stores—blending an engineer’s discipline with product instincts.",
