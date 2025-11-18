@@ -257,12 +257,20 @@ const ProjectDetails = () => {
                     <p className="text-xs uppercase tracking-[0.3em] text-white/70">
                       {t('projectDetails.common.launchPoints')}
                     </p>
-                    {links.map((link) => (
-                      <Button key={link.href} href={link.href} variant="glass" className="w-full gap-2 text-sm">
-                        <LinkIcon type={link.type} />
-                        {t('projectDetails.common.visitWebsite', link.label)}
-                      </Button>
-                    ))}
+                    {links.map((link) => {
+                      const linkLabelKey =
+                        link.type === "drive"
+                          ? "projectDetails.common.downloadApp"
+                          : "projectDetails.common.visitWebsite";
+                      const fallbackLabel = link.type === "drive" ? "Download App" : link.label;
+
+                      return (
+                        <Button key={link.href} href={link.href} variant="glass" className="w-full gap-2 text-sm">
+                          <LinkIcon type={link.type} />
+                          {t(linkLabelKey, fallbackLabel)}
+                        </Button>
+                      );
+                    })}
                   </div>
                 </div>
               )}

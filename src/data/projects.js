@@ -423,7 +423,7 @@ export const projects = [
   {
     id: 3,
     title: "AutoLakta",
-    slug: "autolakta - car marketplace for buyers, sellers, and admins",
+    slug: "autolakta",
     tagline: "Automotive marketplace for buyers, sellers, and admins",
     industry: "Automotive Marketplace / Mobility Commerce",
     description:

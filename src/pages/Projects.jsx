@@ -118,7 +118,9 @@ const Projects = () => {
                           className="w-full text-sm py-2 gap-2"
                         >
                           <LinkIcon type={project.links[0].type} />
-                          {t(`projectDetails.common.visitWebsite`, project.links[0].label)}
+                          {project.links[0].type === "drive"
+                            ? t("projectDetails.common.downloadApp", "Download App")
+                            : t("projectDetails.common.visitWebsite", project.links[0].label)}
                         </Button>
                       )}
                     </div>

@@ -131,7 +131,8 @@
       "architecture": "Architecture",
       "experience": "Experience",
       "experienceSystems": "Experience systems",
-      "visitWebsite": "Visit Website"
+      "visitWebsite": "Visit Website",
+      "downloadApp": "Download App"
     },
     "medtour": {
       "title": "MedTour.sy",
