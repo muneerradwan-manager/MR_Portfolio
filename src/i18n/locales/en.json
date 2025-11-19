@@ -128,6 +128,26 @@
           "favorite": "Various genres"
         }
       }
+    },
+    "skillsList": {
+      "0": "Flutter & Dart mobile app development",
+      "1": "State management with Cubit, Provider, and GetX",
+      "2": "Firebase integration for authentication, data, and notifications",
+      "3": "OneSignal for push notifications",
+      "4": "REST API orchestration with Dio / HTTP",
+      "5": "UI/UX design with rich animations and 3D renders",
+      "6": "Google Mobile Ads integration",
+      "7": "Version control with GitHub and Google Play deployment"
+    },
+    "languageList": {
+      "ar": {
+        "name": "Arabic",
+        "level": "Native"
+      },
+      "en": {
+        "name": "English",
+        "level": "Fluent"
+      }
     }
   },
   "contact": {
@@ -478,6 +498,7 @@
             "3": "Audit-ready logging across every add/edit/delete event"
           }
         }
+      }
     },
     "autolakta": {
       "title": "AutoLakta",
@@ -614,7 +635,6 @@
           }
         }
       }
-    }
     }
   }
 }

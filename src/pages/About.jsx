@@ -106,7 +106,7 @@ const About = () => {
                   {profile.skills.map((skill, index) => (
                     <div key={skill} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                      <p className="text-gray-700 dark:text-gray-200 text-sm">{t(`about.skills.skillsList.${index}`, skill)}</p>
+                      <p className="text-gray-700 dark:text-gray-200 text-sm">{t(`about.skillsList.${index}`, skill)}</p>
                     </div>
                   ))}
                 </div>
@@ -116,11 +116,11 @@ const About = () => {
                 <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.skills.languages')}</p>
                 <div className="space-y-3">
                   {profile.languages.map((language) => {
-                    const langKey = language.name.toLowerCase() === 'arabic' ? 'arabic' : 'english';
+                    const langKey = language.name.toLowerCase() === 'arabic' ? 'ar' : 'en';
                     return (
                       <div key={language.name}>
-                        <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">{t(`about.skills.languageList.${langKey}.name`, language.name)}</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">{t(`about.skills.languageList.${langKey}.level`, language.level)}</p>
+                        <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">{t(`about.languageList.${langKey}.name`, language.name)}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t(`about.languageList.${langKey}.level`, language.level)}</p>
                       </div>
                     );
                   })}
