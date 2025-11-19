@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Menu, CloseSquare } from 'iconsax-react';
 import ThemeToggle from './ThemeToggle';
 import LanguageSwitcher from './LanguageSwitcher';
 import ColorPicker from './ColorPicker';
@@ -43,10 +44,10 @@ const Navbar = () => {
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center gap-2 flex-row">
             <motion.div
               whileHover={{ scale: 1.1, rotate: 5 }}
-              className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent flex-shrink-0"
             >
               MR
             </motion.div>
@@ -56,7 +57,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -83,7 +84,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex items-center space-x-2 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <ColorPicker />
             <LanguageSwitcher />
             <ThemeToggle />
@@ -92,21 +93,11 @@ const Navbar = () => {
               className="p-2 rounded-lg bg-gray-200 dark:bg-gray-800"
               aria-label="Toggle menu"
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                {isMobileMenuOpen ? (
-                  <path d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
+              {isMobileMenuOpen ? (
+                <CloseSquare size={24} color="currentColor" variant="Bulk" />
+              ) : (
+                <Menu size={24} color="currentColor" variant="Bulk" />
+              )}
             </button>
           </div>
         </div>
@@ -121,7 +112,7 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
           >
-            <div className="container-custom py-4 space-y-2">
+            <div className="container-custom py-4 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}

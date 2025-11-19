@@ -51,7 +51,7 @@ export const projects = [
       {
         label: "Google Drive",
         type: "drive",
-        href: "https://drive.google.com/file/d/11c0t7kSJRJzc2LhJbvZAcK5ejKnzY6Qo/view?usp=drive_link",
+        href: "https://drive.google.com/drive/folders/1X2ru252a65I7uECfaLPTFvX2NWVP6EJW?usp=sharing",
       },
     ],
     metrics: [
@@ -272,7 +272,7 @@ export const projects = [
       {
         label: "Google Drive",
         type: "drive",
-        href: "https://drive.google.com/file/d/159eYvpXihdgf2bP0Lb6oGfryPFX1r4vM/view?usp=drive_link",
+        href: "https://drive.google.com/drive/folders/1JIaqThihR35PITbFkXOSbwVyIEhm3WV0?usp=sharing",
       },
     ],
     metrics: [

@@ -224,12 +224,12 @@ const Contact = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center space-x-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
+                      className="flex items-center gap-4 p-4 rounded-lg bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors group"
                     >
-                      <div className="text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform">
+                      <div className="text-primary-600 dark:text-primary-400 group-hover:scale-110 transition-transform flex-shrink-0">
                         <ContactIcon type={method.type} />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <p className="font-semibold text-gray-900 dark:text-gray-100">
                           {t(`contact.channels.${method.type}`)}
                         </p>

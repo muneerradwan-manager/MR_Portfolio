@@ -23,6 +23,7 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        cairo: ['Cairo', 'Inter', 'system-ui', 'sans-serif'],
       },
     },
   },

@@ -46,7 +46,7 @@ const Footer = () => {
           {/* Social Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">{t('footer.connect')}</h4>
-            <div className="flex space-x-4">
+            <div className="flex gap-4">
               {contactLinks.map((channel) => (
                 <motion.a
                   key={channel.label}

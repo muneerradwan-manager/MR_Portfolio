@@ -38,7 +38,7 @@ const About = () => {
                   href={contact.href}
                   className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-sm text-gray-700 dark:text-gray-200 shadow-sm hover:shadow"
                 >
-                  <span className="font-semibold">{contact.label}:</span>
+                  <span className="font-semibold">{t(`contact.contactInfo.${contact.label.toLowerCase().replace(/\s+\/.*$/, '')}`, contact.label)}:</span>
                   <span>{contact.value}</span>
                 </a>
               ))}
@@ -103,10 +103,10 @@ const About = () => {
               <div className="lg:col-span-2">
                 <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.skills.coreSkills')}</p>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {profile.skills.map((skill) => (
+                  {profile.skills.map((skill, index) => (
                     <div key={skill} className="flex items-start gap-3">
                       <span className="mt-1 h-2 w-2 rounded-full bg-primary-500" />
-                      <p className="text-gray-700 dark:text-gray-200 text-sm">{skill}</p>
+                      <p className="text-gray-700 dark:text-gray-200 text-sm">{t(`about.skills.skillsList.${index}`, skill)}</p>
                     </div>
                   ))}
                 </div>
@@ -115,12 +115,15 @@ const About = () => {
               <div>
                 <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.skills.languages')}</p>
                 <div className="space-y-3">
-                  {profile.languages.map((language) => (
-                    <div key={language.name}>
-                      <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">{language.name}</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{language.level}</p>
-                    </div>
-                  ))}
+                  {profile.languages.map((language) => {
+                    const langKey = language.name.toLowerCase() === 'arabic' ? 'arabic' : 'english';
+                    return (
+                      <div key={language.name}>
+                        <p className="text-lg font-semibold text-gray-900 dark:text-gray-100">{t(`about.skills.languageList.${langKey}.name`, language.name)}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">{t(`about.skills.languageList.${langKey}.level`, language.level)}</p>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -151,21 +154,21 @@ const About = () => {
                 <Card className="p-6">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-4">
                     <div>
-                      <p className="text-xs uppercase tracking-[0.3em] text-primary-500">{exp.role}</p>
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{exp.company}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{exp.location}</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-primary-500">{t(`about.experience.roles.${exp.id}.role`, exp.role)}</p>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{t(`about.experience.roles.${exp.id}.company`, exp.company)}</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">{t(`about.experience.roles.${exp.id}.location`, exp.location)}</p>
                     </div>
-                    <div className="text-right">
+                    <div className="text-end">
                       <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
                         {exp.startDate} – {exp.endDate}
                       </p>
-                      <p className="text-xs uppercase tracking-[0.25em] text-gray-400">{exp.employmentType}</p>
+                      <p className="text-xs uppercase tracking-[0.25em] text-gray-400">{t(`about.experience.roles.${exp.id}.employmentType`, exp.employmentType)}</p>
                     </div>
                   </div>
                   {exp.bullets?.length > 0 && (
                     <ul className="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
-                      {exp.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
+                      {exp.bullets.map((bullet, bulletIndex) => (
+                        <li key={bullet}>{t(`about.experience.roles.${exp.id}.bullets.${bulletIndex}`, bullet)}</li>
                       ))}
                     </ul>
                   )}
@@ -184,14 +187,14 @@ const About = () => {
               <p className="text-xs uppercase tracking-[0.4em] text-primary-500 mb-4">{t('about.education.title')}</p>
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{profile.education.degree}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{profile.education.institution}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">{t('about.education.degree', profile.education.degree)}</h3>
+                  <p className="text-gray-600 dark:text-gray-300">{t('about.education.institution', profile.education.institution)}</p>
                 </div>
-                <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">{profile.education.years}</p>
+                <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">{t('about.education.years', profile.education.years)}</p>
               </div>
               <div className="mt-6 space-y-3 text-sm text-gray-600 dark:text-gray-300">
-                {profile.education.highlights.map((highlight) => (
-                  <p key={highlight}>{highlight}</p>
+                {profile.education.highlights.map((highlight, index) => (
+                  <p key={highlight}>{t(`about.education.highlights.${index}`, highlight)}</p>
                 ))}
               </div>
             </Card>
@@ -211,33 +214,36 @@ const About = () => {
             {t('about.hobbies.title')}
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {hobbies.map((hobby, index) => (
-              <motion.div
-                key={hobby.category}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <Card className="p-6 h-full text-center hover:shadow-lg transition-shadow">
-                  <div className="text-4xl mb-4">{hobby.icon}</div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
-                    {hobby.category}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                    {hobby.description}
-                  </p>
-                  {hobby.favorite && (
-                    <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                      <p className="text-xs uppercase tracking-[0.2em] text-primary-500 mb-1">{t('about.hobbies.favorite', 'Favorite')}</p>
-                      <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
-                        {hobby.favorite}
-                      </p>
-                    </div>
-                  )}
-                </Card>
-              </motion.div>
-            ))}
+            {hobbies.map((hobby, index) => {
+              const hobbyKey = hobby.category.toLowerCase() === 'k-drama' ? 'k-drama' : hobby.category.toLowerCase();
+              return (
+                <motion.div
+                  key={hobby.category}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="p-6 h-full text-center hover:shadow-lg transition-shadow">
+                    <div className="text-4xl mb-4">{hobby.icon}</div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+                      {t(`about.hobbies.categories.${hobbyKey}.category`, hobby.category)}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                      {t(`about.hobbies.categories.${hobbyKey}.description`, hobby.description)}
+                    </p>
+                    {hobby.favorite && (
+                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                        <p className="text-xs uppercase tracking-[0.2em] text-primary-500 mb-1">{t('about.hobbies.favorite', 'Favorite')}</p>
+                        <p className="text-sm font-semibold text-primary-600 dark:text-primary-400">
+                          {t(`about.hobbies.categories.${hobbyKey}.favorite`, hobby.favorite)}
+                        </p>
+                      </div>
+                    )}
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

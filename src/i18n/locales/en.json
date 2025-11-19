@@ -56,14 +56,78 @@
       "languages": "Languages"
     },
     "experience": {
-      "title": "Experience"
+      "title": "Experience",
+      "roles": {
+        "hometecs": {
+          "role": "Mobile App Developer (Flutter & Dart)",
+          "company": "HomeTecs",
+          "employmentType": "Full-time · Onsite",
+          "location": "Homs, Syria",
+          "bullets": {
+            "0": "Designed AutoLakta, a multi-brand car marketplace with advanced search, CRUD inventory workflows, and media galleries.",
+            "1": "Launched OVACS, a legal-tech suite that helps practices archive cases, manage sessions, and control document access."
+          }
+        },
+        "fh-team": {
+          "role": "Mobile App Developer (Flutter & Dart)",
+          "company": "FH Team",
+          "employmentType": "Full-time · Onsite",
+          "location": "Homs, Syria",
+          "bullets": {
+            "0": "Built 3alamkashouf, connecting people seeking currency exchange with nearby peers for the best rate and fastest meetups."
+          }
+        },
+        "beta": {
+          "role": "Mobile App Developer (Flutter & Dart)",
+          "company": "Beta",
+          "employmentType": "Full-time · Onsite",
+          "location": "Homs, Syria",
+          "bullets": {
+            "0": "Delivered six distinct apps—from VPN clients and gold inventory tracking to Islamic curricula trainers and gym management—with role-based permissions and rich content feeds."
+          }
+        },
+        "uct": {
+          "role": "Mobile App Developer (Flutter & Dart)",
+          "company": "UCT",
+          "employmentType": "Full-time · Remote",
+          "location": "Homs, Syria",
+          "bullets": {
+            "0": "Shipped Helpat (customer + provider) service apps plus the EBD redesign, handling store releases for both Google Play and App Store."
+          }
+        }
+      }
     },
     "education": {
-      "title": "Education"
+      "title": "Education",
+      "institution": "Al-Ba'ath University",
+      "degree": "Bachelor's in Information Engineering (Networks)",
+      "years": "2015 – 2021",
+      "highlights": {
+        "0": "Focus on networking infrastructure, CNNA, and wireless networking",
+        "1": "Hands-on experience with Java, C++, JavaScript, CSS, HTML, and full web stacks",
+        "2": "Graduated with a strong foundation in distributed systems and software engineering"
+      }
     },
     "hobbies": {
       "title": "Hobbies & Interests",
-      "favorite": "Favorite"
+      "favorite": "Favorite",
+      "categories": {
+        "anime": {
+          "category": "Anime",
+          "description": "Watch animes",
+          "favorite": "Hunter x Hunter"
+        },
+        "k-drama": {
+          "category": "K-Drama",
+          "description": "Watch k-drama",
+          "favorite": "Squid Game"
+        },
+        "music": {
+          "category": "Music",
+          "description": "Listen to English, Arabic, and K-pop songs",
+          "favorite": "Various genres"
+        }
+      }
     }
   },
   "contact": {
@@ -93,6 +157,12 @@
       "linkedin": "LinkedIn",
       "facebook": "Facebook",
       "instagram": "Instagram"
+    },
+    "contactInfo": {
+      "title": "Contact Information",
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn"
     },
     "callout": {
       "title": "Let's Work Together",

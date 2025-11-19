@@ -1,28 +1,22 @@
+import { GooglePlay, Apple, GoogleDrive, Global } from 'iconsax-react';
+
 const iconMap = {
-  playstore: (
-    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
-  ),
-  appstore: (
-    <path d="M18 0H6A6 6 0 0 0 0 6v12a6 6 0 0 0 6 6h12a6 6 0 0 0 6-6V6a6 6 0 0 0-6-6m-4.2 3.3 1.5 2.6h-.9l-1.5-2.6m2.5 4.2h2.6l-.4.7h-2.6M12 3.3l1.5 2.6h-3ZM9.7 6l1.5 2.6H8.6L7.1 6m-2 0H8.5l.4.7H5.5m11.1 5.3-.8 1.4h-5.7l-.8-1.4m-1.8-3.1 1.3 2.1-.8 1.5-2.1-3.6m11.1 0 2.1 3.6-2.1 3.6h-4.2l1.3-2.1h2.5l.8-1.5-1.3-2.1M3.3 8.5 5.4 12l-2.1 3.6L1 12Z" />
-  ),
-  drive: (
-    <path d="M6.94 2 1 12l4.63 8h11.46L17.94 18H8.63L3.94 10l3-5.25L12.5 18h4.44L23 12 17.06 2Z" />
-  ),
-  web: (
-    <>
-      <path d="M12 2a10 10 0 1 0 10 10A10.01 10.01 0 0 0 12 2Zm6.93 9h-3.07a15.12 15.12 0 0 0-1.06-4.61A8 8 0 0 1 18.93 11Z" />
-      <path d="M12 4a13.33 13.33 0 0 1 1.74 5h-3.48A13.33 13.33 0 0 1 12 4Zm-2.8.39A15.12 15.12 0 0 0 8.13 11H5.07a8 8 0 0 1 4.13-6.61Z" />
-      <path d="M4.07 13h3.06a15.12 15.12 0 0 0 1.06 4.61A8 8 0 0 1 4.07 13Zm5.13 0h5.6a13.33 13.33 0 0 1-1.8 5 13.33 13.33 0 0 1-1.93 0 13.33 13.33 0 0 1-1.87-5Zm4.6 6.61A15.12 15.12 0 0 0 15.87 13h3.06a8 8 0 0 1-4.13 6.61Z" />
-    </>
-  ),
+  playstore: GooglePlay,
+  appstore: Apple,
+  drive: GoogleDrive,
+  web: Global,
 };
 
-const LinkIcon = ({ type = 'web', className = 'w-4 h-4' }) => {
-  const content = iconMap[type] ?? iconMap.web;
+const LinkIcon = ({ type = 'web', className = '' }) => {
+  const IconComponent = iconMap[type] ?? iconMap.web;
   return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      {content}
-    </svg>
+    <IconComponent 
+      size={16} 
+      color="currentColor" 
+      variant="Bulk" 
+      className={className}
+      style={{ display: 'inline-block', flexShrink: 0 }}
+    />
   );
 };
 

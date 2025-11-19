@@ -11,4 +11,12 @@ export default defineConfig(({ mode }) => ({
     }),
   ],
   base: mode === 'production' ? '/MR_Portfolio/' : '/',
+  build: {
+    sourcemap: false,
+  },
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
 }))

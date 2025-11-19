@@ -2,6 +2,7 @@ import { useMemo, useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from 'react-i18next';
+import { ArrowLeft2, ArrowRight2 } from 'iconsax-react';
 import { projects } from "../data/projects";
 import MobileScreenshotGallery from "../components/MobileScreenshotGallery";
 import Button from "../components/Button";
@@ -185,21 +186,9 @@ const ProjectDetails = () => {
           <div className="flex items-center justify-between gap-4">
             <Link
               to="/projects"
-              className="inline-flex items-center text-sm text-primary-600 dark:text-primary-400 hover:underline"
+              className="inline-flex items-center gap-2 text-sm text-primary-600 dark:text-primary-400 hover:underline"
             >
-              <svg
-                className="w-4 h-4 mr-2"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ArrowLeft2 size={16} color="currentColor" variant="Bulk" className="rtl:rotate-180" />
               {t('projectDetails.common.backToProjects')}
             </Link>
             <p className="text-xs uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400">
@@ -265,7 +254,7 @@ const ProjectDetails = () => {
                       const fallbackLabel = link.type === "drive" ? "Download App" : link.label;
 
                       return (
-                        <Button key={link.href} href={link.href} variant="glass" className="w-full gap-2 text-sm">
+                        <Button key={link.href} href={link.href} variant="glass" className="w-full gap-2 text-sm flex items-center justify-center">
                           <LinkIcon type={link.type} />
                           {t(linkLabelKey, fallbackLabel)}
                         </Button>
@@ -576,38 +565,14 @@ const ProjectDetails = () => {
                       className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 rounded-full p-3 hover:scale-105 transition"
                       aria-label="Previous screenshot"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M15 19l-7-7 7-7"
-                        />
-                      </svg>
+                      <ArrowLeft2 size={20} color="currentColor" variant="Bulk" />
                     </button>
                     <button
                       onClick={showNextImage}
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 text-gray-800 rounded-full p-3 hover:scale-105 transition"
                       aria-label="Next screenshot"
                     >
-                      <svg
-                        className="w-5 h-5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                      <ArrowRight2 size={20} color="currentColor" variant="Bulk" />
                     </button>
                   </>
                 )}

@@ -115,7 +115,7 @@ const Projects = () => {
                         <Button
                           href={project.links[0].href}
                           variant="secondary"
-                          className="w-full text-sm py-2 gap-2"
+                          className="w-full text-sm py-2 gap-2 flex items-center justify-center"
                         >
                           <LinkIcon type={project.links[0].type} />
                           {project.links[0].type === "drive"
