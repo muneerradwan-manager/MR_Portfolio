@@ -634,6 +634,134 @@
             "3": "Image picker + cropper utilities ensure sellers publish high-quality media."
           }
         }
+    ,
+    "lets-go-gym": {
+      "title": "Let’s Go Gym",
+      "tagline": "Multilingual back-office suite for modern gyms",
+      "industry": "Gym Management / Operations OS",
+      "description": "Let’s Go Gym unifies dashboards, billing, expenses, inventory, and user operations inside a single Flutter workspace. Live KPIs, consistent CRUD flows, and localization across eight languages keep gym owners productive on Android, iOS, web, or desktop.",
+      "metrics": {
+        "modules": "Operational modules",
+        "modulesValue": "5+",
+        "locales": "Locales",
+        "localesValue": "8 languages",
+        "platforms": "Platforms",
+        "platformsValue": "Android · iOS · Web · Desktop"
+      },
+      "deliverables": {
+        "0": "Realtime analytics dashboard",
+        "1": "Unified billing, expenses, store, and user modules",
+        "2": "Role-based security with localization"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "Challenge",
+            "body": "Gyms relied on spreadsheets, legacy POS tools, and single-language UIs to track invoices, expenses, inventory, and staff—making financial visibility and collaboration painful."
+          },
+          "solution": {
+            "title": "Solution",
+            "body": "Built Let’s Go Gym as a clean-architecture Flutter app using GetX modules, Dio networking, secure token storage, and localization primitives so every operational workflow lives in one cohesive, multilingual workspace."
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "Realtime control center",
+            "description": "Income vs expense KPIs, FL Chart visuals, trend toggles, and color-coded cards provide instant intelligence."
+          },
+          "1": {
+            "title": "Role-ready CRUD modules",
+            "description": "Invoices, expenses, store catalog, and user management share search, filter, and validation patterns for rapid onboarding."
+          },
+          "2": {
+            "title": "Enterprise security",
+            "description": "Bearer-token auth, secure storage, offline detection, and localization-aware UI keep data safe on every platform."
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Launch & authenticate",
+            "steps": {
+              "0": "Splash and onboarding screens introduce the OS before routing to login.",
+              "1": "Users sign in with email/password and receive secure token storage plus session guards."
+            }
+          },
+          "1": {
+            "title": "Configure & operate",
+            "steps": {
+              "0": "Admins set up branding, localization, and permissions, then dive into invoices, expenses, and store modules.",
+              "1": "Finance leads reconcile payments while store managers update inventory, pricing, and product media."
+            }
+          },
+          "2": {
+            "title": "Monitor & iterate",
+            "steps": {
+              "0": "Owners watch KPI cards, filter trends, and export insights before adjusting promos or staffing.",
+              "1": "Localization-ready UI keeps global teams aligned without translation friction."
+            }
+          }
+        },
+        "userRoles": {
+          "gymOwner": {
+            "name": "Gym Owner",
+            "summary": "Keeps a live pulse on revenue, expenses, and operational health.",
+            "capabilities": {
+              "0": "Scan income vs expense KPIs, trend charts, and store stats in seconds.",
+              "1": "Drill into invoice or expense detail when anomalies pop up.",
+              "2": "Switch languages instantly to collaborate with multilingual staff."
+            }
+          },
+          "financeLead": {
+            "name": "Finance Lead",
+            "summary": "Runs billing, payments, and expense control.",
+            "capabilities": {
+              "0": "Create, edit, and search invoices by client or number with payment tracking.",
+              "1": "Categorize expenses, attach notes, and audit spend by period.",
+              "2": "Use filters to reconcile outstanding balances quickly."
+            }
+          },
+          "storeManager": {
+            "name": "Store Manager",
+            "summary": "Owns product catalog, inventory, and procurement.",
+            "capabilities": {
+              "0": "Maintain products with descriptions, pricing, quantity, and media uploads.",
+              "1": "Toggle active/inactive status to keep shelves accurate.",
+              "2": "Monitor low-stock alerts and plan future purchase orders."
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Localization-ready onboarding",
+            "steps": {
+              "0": "Splash → onboarding → login lets operators start in English or Arabic.",
+              "1": "Session guard rehydrates tokens so returning users skip redundant auth."
+            }
+          },
+          "1": {
+            "title": "Operational guardrails",
+            "steps": {
+              "0": "List → detail → action rhythm keeps every module predictable.",
+              "1": "Connectivity checks, shimmer loaders, and error banners protect data during unstable networks."
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "Clean architecture with views, GetX controllers, repositories, and service layers per module.",
+            "1": "Dio networking with interceptors, request logging, and Dartz-based failure modeling.",
+            "2": "SharedPreferences-backed secure token storage plus session guards around each API call.",
+            "3": "Reusable widgets, cards, and form fields shared by invoices, expenses, store, and user modules."
+          },
+          "experience": {
+            "0": "Localization for eight languages with Cairo/Inter typography and RTL-aware spacing.",
+            "1": "Device Preview + responsive tokens keep mobile, tablet, and desktop layouts aligned.",
+            "2": "Offline detection, pull-to-refresh, and empty/error states provide clear guidance.",
+            "3": "Hot-reload friendly structure with Flutter Lints for maintainable delivery."
+          }
+        }
+      }
+    }
       }
     }
   }

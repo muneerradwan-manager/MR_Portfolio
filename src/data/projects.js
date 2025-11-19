@@ -606,4 +606,185 @@ export const projects = [
     },
     featured: true,
   },
+  {
+    id: 4,
+    title: "Let's Go Gym",
+    slug: "lets-go-gym",
+    tagline: "Multilingual back-office suite for modern gyms",
+    industry: "Gym Management / Operations OS",
+    description:
+      "Let's Go Gym centralizes dashboards, billing, inventory, clients, and staff governance into a single Flutter workspace. It delivers live KPIs, full CRUD tooling, role-aware security, and localization across eight languages so gym operators can run day-to-day operations from anywhere.",
+    technologies: [
+      "flutter",
+      "dart",
+      "get",
+      "dio",
+      "shared_preferences",
+      "flutter_svg",
+      "iconsax",
+      "fl_chart",
+      "cached_network_image",
+      "image_picker",
+      "permission_handler",
+      "dartz",
+      "equatable",
+      "device_preview",
+      "flutter_lints",
+      "Cairo font",
+      "Inter font",
+    ],
+    brand: {
+      accent: "#696CFF",
+      logo: null,
+      icon: null,
+    },
+    screenshots: [],
+    links: [
+      {
+        label: "Case Study",
+        type: "web",
+        href: "https://github.com/muneerradwan-manager/MR_Portfolio/tree/main/projects/gym",
+      },
+    ],
+    metrics: [
+      {
+        labelKey: "modules",
+        label: "Operational modules",
+        valueKey: "modulesValue",
+        value: "5+",
+      },
+      {
+        labelKey: "locales",
+        label: "Locales",
+        valueKey: "localesValue",
+        value: "8 languages",
+      },
+      {
+        labelKey: "platforms",
+        label: "Platforms",
+        valueKey: "platformsValue",
+        value: "Android · iOS · Web · Desktop",
+      },
+    ],
+    deliverables: [
+      "Realtime analytics dashboard",
+      "Unified billing, expenses, store, and user management",
+      "Role-based security with localization",
+    ],
+    caseStudy: {
+      summary: [
+        {
+          title: "Challenge",
+          body: "Gym owners were juggling spreadsheets, legacy POS tools, and single-language UIs to track invoices, expenses, inventory, and staff—making it impossible to maintain clean financial visibility or a consistent operator experience.",
+        },
+        {
+          title: "Solution",
+          body: "Built Let's Go Gym as a clean-architecture Flutter application with GetX-driven modules, Dio-powered APIs, secure token storage, and localization primitives so every operational surface—dashboard, invoicing, expenses, store, users—lives in one cohesive workspace.",
+        },
+      ],
+      highlights: [
+        {
+          title: "Realtime control center",
+          description:
+            "Income vs expense KPIs, FL Chart visualizations, trend toggles, and color-coded cards keep operators aligned on financial health in seconds.",
+        },
+        {
+          title: "Role-ready CRUD modules",
+          description:
+            "Invoices, expenses, store catalog, and user management share consistent patterns with search, filters, detail drawers, and validation so teams can work faster with fewer mistakes.",
+        },
+        {
+          title: "Enterprise-grade security",
+          description:
+            "Bearer token auth, session guards, localization-aware UI, and offline detection keep data secure whether owners manage the gym from Android, iOS, Web, or desktop.",
+        },
+      ],
+      userJourney: [
+        {
+          title: "Launch & authenticate",
+          steps: [
+            "Splash and onboarding screens introduce the value props before routing to login.",
+            "Users sign in with email/password and receive secure token storage plus session guards.",
+          ],
+        },
+        {
+          title: "Configure & operate",
+          steps: [
+            "Admins set up branding, localization, and permissions, then dive into invoices, expenses, and store modules.",
+            "Finance leads reconcile payments while store managers update inventory, pricing, and product media.",
+          ],
+        },
+        {
+          title: "Monitor & iterate",
+          steps: [
+            "Owners watch live KPI cards, filter trends, and export insights before adjusting pricing, promos, or staffing.",
+            "Localization-ready UI keeps teams productive across English, Arabic, and additional locales.",
+          ],
+        },
+      ],
+      userRoles: [
+        {
+          name: "Gym Owner",
+          summary:
+            "Keeps a real-time pulse on revenue, expenses, and operational health.",
+          capabilities: [
+            "View income vs expense KPIs, trend charts, and store stats in one dashboard.",
+            "Drill into invoice or expense detail when anomalies appear.",
+            "Switch languages on the fly to collaborate with multilingual teams.",
+          ],
+        },
+        {
+          name: "Finance Lead",
+          summary:
+            "Runs invoicing, payments, and expense control for the gym.",
+          capabilities: [
+            "Create, edit, and search invoices by client or number with payment tracking.",
+            "Categorize expenses, attach notes, and audit spending per time period.",
+            "Use filtered views to reconcile outstanding balances quickly.",
+          ],
+        },
+        {
+          name: "Store Manager",
+          summary:
+            "Owns product catalog, inventory, and procurement.",
+          capabilities: [
+            "Maintain products with descriptions, pricing, quantity, and media uploads.",
+            "Toggle active/inactive status to keep shelves accurate across platforms.",
+            "Monitor low-stock alerts and upcoming purchase needs.",
+          ],
+        },
+      ],
+      flow: [
+        {
+          title: "Localization-aware onboarding",
+          steps: [
+            "Splash → onboarding → login enables English or Arabic-first experiences.",
+            "Session guard rehydrates tokens so returning users skip redundant auth.",
+          ],
+        },
+        {
+          title: "Operational guardrails",
+          steps: [
+            "Consistency across list → detail → action flows limits training time.",
+            "Connectivity checks, shimmer loaders, and error banners protect data integrity during poor networks.",
+          ],
+        },
+      ],
+      technical: {
+        architecture: [
+          "Clean architecture with views, controllers (GetX), repositories, and services layered per module.",
+          "Dio networking with interceptors, request logging, and failure modeling via Dartz.",
+          "SharedPreferences-backed secure token + session storage with guards around each API call.",
+          "Reusable widgets, cards, and form fields for invoices, expenses, store, and users.",
+        ],
+        experience: [
+          "Localization infrastructure for 8 languages with Cairo/Inter fonts and RTL-aware spacing.",
+          "Device Preview + responsive layout tokens keep mobile, tablet, and desktop views in sync.",
+          "Offline detection, pull-to-refresh, and empty/error states provide clear user feedback.",
+          "Hot reload friendly structure plus Flutter Lints to keep the codebase maintainable.",
+        ],
+      },
+    },
+    featured: true,
+  },
 ];
