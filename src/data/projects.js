@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     title: "MedTour.sy",
-    slug: "medtour.sy - medical tourism OS for patients, partners, and coordinators",
+    slug: "medtour",
     tagline: "Medical tourism OS for patients, partners, and coordinators",
     industry: "Medical Tourism / Marketplace",
     description:
@@ -223,7 +223,7 @@ export const projects = [
   {
     id: 2,
     title: "OVACS Mobile Suite",
-    slug: "ovacs - case, client, session and document management system",
+    slug: "ovacs",
     tagline:
       "One command center for coordinators, case managers, and clinicians",
     industry: "Case, Client, Session And Document Management System",
