@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from 'react';
-import { motion } from 'framer-motion';
 
 const colorThemes = [
   {
@@ -133,14 +132,7 @@ const colorThemes = [
 ];
 
 const ColorPicker = () => {
-  const [isAnimating, setIsAnimating] = useState(() => {
-    const saved = localStorage.getItem('colorAnimation');
-    return saved ? saved === 'true' : true; // Default: true (animating)
-  });
-  const [currentColorIndex, setCurrentColorIndex] = useState(() => {
-    const saved = localStorage.getItem('colorIndex');
-    return saved ? parseInt(saved, 10) : 0; // Start with green (index 0)
-  });
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
   const applyColorTheme = useCallback((theme) => {
     const root = document.documentElement;
@@ -153,20 +145,17 @@ const ColorPicker = () => {
 
   // Auto-cycle colors every 2 seconds
   useEffect(() => {
-    if (!isAnimating) return;
-
     const interval = setInterval(() => {
       setCurrentColorIndex((prevIndex) => {
         const nextIndex = (prevIndex + 1) % colorThemes.length;
         const nextTheme = colorThemes[nextIndex];
         applyColorTheme(nextTheme);
-        localStorage.setItem('colorIndex', nextIndex.toString());
         return nextIndex;
       });
     }, 2000); // Change every 2 seconds
 
     return () => clearInterval(interval);
-  }, [isAnimating, applyColorTheme]);
+  }, [applyColorTheme]);
 
   // Apply initial color on mount
   useEffect(() => {
@@ -175,54 +164,7 @@ const ColorPicker = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const toggleAnimation = () => {
-    setIsAnimating((prev) => {
-      const newValue = !prev;
-      localStorage.setItem('colorAnimation', newValue.toString());
-      return newValue;
-    });
-  };
-
-  const currentTheme = colorThemes[currentColorIndex];
-
-  return (
-    <motion.button
-      onClick={toggleAnimation}
-      className="relative p-2 rounded-lg bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      aria-label={isAnimating ? 'Stop color animation' : 'Start color animation'}
-      title={isAnimating ? 'Stop color animation' : 'Start color animation'}
-    >
-      <div className="relative">
-        <div
-          className="w-5 h-5 rounded-full border-2 border-white dark:border-gray-800 shadow-sm transition-all duration-500"
-          style={{ backgroundColor: currentTheme.colors[500] }}
-        />
-        {isAnimating && (
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-primary-500"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        )}
-      </div>
-      {!isAnimating && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600 border-2 border-white dark:border-gray-800"
-        />
-      )}
-    </motion.button>
-  );
+  return null;
 };
 
 export default ColorPicker;
