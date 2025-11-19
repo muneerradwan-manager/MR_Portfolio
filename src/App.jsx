@@ -22,6 +22,7 @@ function App() {
             <Route path="/projects/:slug" element={<ProjectDetails />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            
           </Routes>
         </main>
         <Footer />
