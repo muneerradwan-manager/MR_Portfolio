@@ -735,8 +735,7 @@ export const projects = [
         },
         {
           name: "Finance Lead",
-          summary:
-            "Runs invoicing, payments, and expense control for the gym.",
+          summary: "Runs invoicing, payments, and expense control for the gym.",
           capabilities: [
             "Create, edit, and search invoices by client or number with payment tracking.",
             "Categorize expenses, attach notes, and audit spending per time period.",
@@ -745,8 +744,7 @@ export const projects = [
         },
         {
           name: "Store Manager",
-          summary:
-            "Owns product catalog, inventory, and procurement.",
+          summary: "Owns product catalog, inventory, and procurement.",
           capabilities: [
             "Maintain products with descriptions, pricing, quantity, and media uploads.",
             "Toggle active/inactive status to keep shelves accurate across platforms.",
@@ -786,5 +784,8 @@ export const projects = [
       },
     },
     featured: true,
+
+
+    
   },
 ];
