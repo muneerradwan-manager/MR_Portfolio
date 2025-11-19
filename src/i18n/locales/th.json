@@ -2,51 +2,52 @@
   "nav": {
     "home": "หน้าแรก",
     "projects": "โปรเจ็กต์",
-    "about": "เกี่ยวกับ",
+    "about": "เกี่ยวกับฉัน",
     "contact": "ติดต่อ"
   },
   "home": {
     "hero": {
       "badge": "Mid-Level Flutter Developer",
-      "headline": "สวัสดี ฉันคือ Muneer Radwan",
-      "lead": "ฉันสร้างแอปพลิเคชันมือถือที่สวยงามและมีประสิทธิภาพด้วย Flutter",
-      "description": "หลงใหลในการสร้างประสบการณ์ผู้ใช้ที่ราบรื่นและสร้างโซลูชันที่สง่างามสำหรับปัญหาที่ซับซ้อน เชี่ยวชาญในการพัฒนาแอปมือถือข้ามแพลตฟอร์มด้วย Flutter & Dart",
-      "primaryCta": "ดูผลงานของฉัน",
-      "secondaryCta": "ติดต่อฉัน"
+      "headline": "สวัสดีครับ ผมมุเนียร์ รัดวาน",
+      "lead": "ผมสร้างแอปมือถือที่สวยงามและรวดเร็วด้วย Flutter",
+      "description": "คลั่งไคล้การสร้างประสบการณ์ผู้ใช้ที่ลื่นไหล และแก้ปัญหาซับซ้อนด้วยวิธีที่สง่างาม เชี่ยวชาญงานพัฒนาแบบ cross-platform ด้วย Flutter & Dart",
+      "primaryCta": "ดูผลงาน",
+      "secondaryCta": "ติดต่อผม"
     }
   },
   "projects": {
-    "title": "โปรเจ็กต์ของฉัน",
-    "description": "คอลเลกชันของแอปพลิเคชัน Flutter ที่ฉันสร้างขึ้น แสดงทักษะของฉันในการพัฒนาแอปมือถือ การออกแบบ UI/UX และการแก้ปัญหา",
-    "viewDetails": "ดูรายละเอียด"
+    "title": "ผลงานของผม",
+    "description": "คอลเลกชันแอป Flutter ที่โชว์ทักษะด้าน mobile dev, UI/UX และการแก้ปัญหา",
+    "viewDetails": "ดูรายละเอียด",
+    "featured": "แนะนำ"
   },
   "about": {
     "hero": {
-      "title": "เกี่ยวกับฉัน",
-      "subtitle": "วิศวกรเทคโนโลยีสารสนเทศ & นักพัฒนา Flutter",
-      "summary": "ฉันสร้างแอปพลิเคชัน Flutter ตั้งแต่ต้นจนจบ—ตั้งแต่การวางแผน UX และการจัดการสถานะไปจนถึงการเผยแพร่ในร้านค้าผู้บริโภค—ผสมผสานระเบียบวินัยของวิศวกรกับสัญชาตญาณของผลิตภัณฑ์"
+      "title": "เกี่ยวกับผม",
+      "subtitle": "วิศวกร IT และนักพัฒนา Flutter",
+      "summary": "ดูแลโปรเจ็กต์ Flutter ครบวงจร ตั้งแต่ UX, state management ไปจนถึงปล่อยขึ้นสโตร์ ผสานวินัยแบบวิศวกรกับสัญชาตญาณเชิงผลิตภัณฑ์"
     },
     "story": {
-      "title": "เรื่องราวของฉัน",
-      "paragraph1": "ฉันคือ Muneer Radwan วิศวกรเทคโนโลยีสารสนเทศที่ย้ายไปพัฒนา Flutter เพราะมันทำให้ฉันสามารถออกแบบประสบการณ์ข้ามแพลตฟอร์มที่ประณีตด้วยชุดเครื่องมือเดียว ตลอดสองปีที่ผ่านมาฉันได้สร้างแอปเชิงพาณิชย์ที่ครอบคลุมอีคอมเมิร์ซ เทคโนโลยีทางกฎหมาย ตลาดบริการ และเครื่องมือเพิ่มผลผลิต",
-      "paragraph2": "การเดินทางของประวัติย่อของฉันเน้นสิ่งที่ฉันสนใจ: ความเข้มงวดในการสร้างเครือข่ายและระบบ ประสบการณ์การจัดส่งในโลกแห่งความเป็นจริงภายในหน่วยงานและทีมเทคโนโลยี และความสามารถในการย้ายจากการขัดเกลาผู้ใช้ไปจนถึงการติดตั้งการแจ้งเตือน การวิเคราะห์ และการทำให้การเผยแพร่อัตโนมัติ",
-      "paragraph3": "ฉันมีแรงจูงใจจากผลิตภัณฑ์ที่ต้องการทั้งประสิทธิภาพและความเห็นอกเห็นใจต่อผู้ใช้ปลายทาง—แอปที่รู้สึกสวยงามในขณะที่จัดการกับเวิร์กโฟลว์ทางธุรกิจที่จริงจัง"
+      "title": "เรื่องราว",
+      "paragraph1": "ผมหันมาใช้ Flutter เพราะสามารถออกแบบประสบการณ์ cross-platform ที่เนียนสวยได้จาก codebase เดียว สองปีที่ผ่านมาทำแอปเชิงพาณิชย์ทั้ง e-commerce, legal-tech, marketplace และ productivity",
+      "paragraph2": "ประวัติการทำงานสะท้อนสิ่งที่ผมให้ความสำคัญ: ความแม่นยำด้าน network/system, ประสบการณ์ส่งงานจริงในเอเจนซี/ทีมเทค และความสามารถเชื่อมจากการขัด UI ลงลึกถึง notification, analytics, release automation",
+      "paragraph3": "ชอบผลิตภัณฑ์ที่ต้องการทั้ง performance และ empathy ต่อผู้ใช้ ปั้นแอปที่ยังดูดีขณะจัดการ workflow ธุรกิจหนัก ๆ"
     },
     "stats": {
       "experience": {
         "label": "ประสบการณ์",
         "value": "3+ ปี",
-        "detail": "การส่งมอบ Flutter & Dart ข้ามมือถือ เว็บ และพื้นผิวเดสก์ท็อป"
+        "detail": "ส่งมอบงาน Flutter & Dart ครบทั้งมือถือ เว็บ และเดสก์ท็อป"
       },
       "roles": {
         "label": "บทบาท",
-        "value": "นักพัฒนาแอปมือถือ",
+        "value": "Mobile App Developer",
         "detail": "HomeTecs · FH Team · Beta · UCT"
       },
       "focus": {
         "label": "โฟกัส",
-        "value": "แอประดับผลิตภัณฑ์",
-        "detail": "ระบบ UI/UX การจัดการสถานะ และการรวมแบบเรียลไทม์"
+        "value": "แอประดับโปรดักต์",
+        "detail": "ระบบ UI/UX, การจัดการ state, การเชื่อมต่อแบบเรียลไทม์"
       }
     },
     "skills": {
@@ -54,60 +55,593 @@
       "coreSkills": "ทักษะหลัก",
       "languages": "ภาษา"
     },
+    "skillsList": {
+      "0": "พัฒนาแอปมือถือด้วย Flutter & Dart",
+      "1": "บริหาร state ด้วย Cubit, Provider, GetX",
+      "2": "เชื่อม Firebase สำหรับ auth, data, notifications",
+      "3": "ผสาน OneSignal เพื่อส่ง push",
+      "4": "ออกแบบ REST API ด้วย Dio / HTTP",
+      "5": "ดีไซน์ UI/UX ที่มี motion และ 3D สวยงาม",
+      "6": "ผนวก Google Mobile Ads",
+      "7": "ใช้ GitHub และปล่อยลง Google Play"
+    },
+    "languageList": {
+      "ar": {
+        "name": "อาหรับ",
+        "level": "เจ้าของภาษา"
+      },
+      "en": {
+        "name": "อังกฤษ",
+        "level": "คล่องแคล่ว"
+      }
+    },
     "experience": {
-      "title": "ประสบการณ์"
+      "title": "ประสบการณ์",
+      "roles": {
+        "hometecs": {
+          "role": "Mobile App Dev (Flutter & Dart)",
+          "company": "HomeTecs",
+          "employmentType": "เต็มเวลา · ออนไซต์",
+          "location": "โฮมส์ ซีเรีย",
+          "bullets": {
+            "0": "ออกแบบ AutoLakta ตลาดรถหลายแบรนด์ที่มี advanced search, CRUD สต็อก และแกลเลอรีสื่อ",
+            "1": "เปิดตัว OVACS ชุด legal-tech สำหรับจัดเก็บคดี, จัดการเซสชัน, ควบคุมเอกสาร"
+          }
+        },
+        "fh-team": {
+          "role": "Mobile App Dev (Flutter & Dart)",
+          "company": "FH Team",
+          "employmentType": "เต็มเวลา · ออนไซต์",
+          "location": "โฮมส์ ซีเรีย",
+          "bullets": {
+            "0": "สร้าง 3alamkashouf ที่จับคู่ผู้แลกเปลี่ยนเงินกับพาร์ตเนอร์ใกล้เคียง เพื่อได้เรตดีและเร็วที่สุด"
+          }
+        },
+        "beta": {
+          "role": "Mobile App Dev (Flutter & Dart)",
+          "company": "Beta",
+          "employmentType": "เต็มเวลา · ออนไซต์",
+          "location": "โฮมส์ ซีเรีย",
+          "bullets": {
+            "0": "ส่งมอบแอป 6 ตัว ตั้งแต่ VPN, ระบบทอง, แอปการศึกษา, ไปจนถึง gym management พร้อม role-based permission"
+          }
+        },
+        "uct": {
+          "role": "Mobile App Dev (Flutter & Dart)",
+          "company": "UCT",
+          "employmentType": "เต็มเวลา · รีโมต",
+          "location": "โฮมส์ ซีเรีย",
+          "bullets": {
+            "0": "ปล่อย Helpat (ลูกค้า+ผู้ให้บริการ) และรีดีไซน์ EBD รับผิดชอบ release ทั้ง Google Play / App Store"
+          }
+        }
+      }
     },
     "education": {
-      "title": "การศึกษา"
+      "title": "การศึกษา",
+      "institution": "มหาวิทยาลัย Al-Ba'ath",
+      "degree": "ปริญญาตรี Information Engineering (Networks)",
+      "years": "2015 – 2021",
+      "highlights": {
+        "0": "โฟกัสที่โครงสร้างเครือข่าย, CCNA, wireless networking",
+        "1": "ฝึก Java, C++, JavaScript, CSS, HTML และ full-stack",
+        "2": "จบด้วยพื้นฐานแข็งแรงด้าน distributed systems และ software engineering"
+      }
     },
     "hobbies": {
-      "title": "งานอดิเรกและความสนใจ"
+      "title": "งานอดิเรก & ความสนใจ",
+      "favorite": "เรื่องโปรด",
+      "categories": {
+        "anime": {
+          "category": "อนิเมะ",
+          "description": "ชอบดูอนิเมะ",
+          "favorite": "Hunter x Hunter"
+        },
+        "k-drama": {
+          "category": "ซีรีส์เกาหลี",
+          "description": "ดู K-Drama",
+          "favorite": "Squid Game"
+        },
+        "music": {
+          "category": "ดนตรี",
+          "description": "ฟังเพลงอังกฤษ อาหรับ และ K-pop",
+          "favorite": "หลายแนว"
+        }
+      }
     }
   },
   "contact": {
     "hero": {
-      "title": "ติดต่อฉัน",
-      "description": "มีโปรเจ็กต์ในใจหรือต้องการร่วมมือกันไหม? ฉันอยากได้ยินจากคุณ!"
+      "title": "ติดต่อผม",
+      "description": "มีโปรเจ็กต์หรืออยากร่วมงาน? ยินดีฟังทุกไอเดียครับ"
     },
-    "intro": "อย่าลังเลที่จะติดต่อผ่านช่องทางใดช่องทางหนึ่งเหล่านี้ ฉันมักจะตอบกลับภายใน 24 ชั่วโมง",
+    "intro": "ทักมาได้ทุกช่องทาง ผมตอบกลับภายใน 24 ชั่วโมงเป็นส่วนใหญ่",
     "form": {
-      "title": "ส่งข้อความ",
+      "title": "ส่งข้อความหา",
       "name": "ชื่อ",
-      "namePlaceholder": "ชื่อของคุณ",
+      "namePlaceholder": "ระบุชื่อ",
       "email": "อีเมล",
       "emailPlaceholder": "your.email@example.com",
       "message": "ข้อความ",
-      "messagePlaceholder": "ข้อความของคุณ...",
+      "messagePlaceholder": "เล่ารายละเอียด...",
       "submit": "ส่งข้อความ",
       "sending": "กำลังส่ง...",
-      "success": "ส่งข้อความสำเร็จ! ฉันจะติดต่อกลับเร็วๆ นี้",
-      "error": "ส่งข้อความล้มเหลว กรุณาลองอีกครั้งหรือติดต่อฉันโดยตรงทางอีเมล"
+      "success": "รับข้อความแล้ว เดี๋ยวผมตอบกลับนะครับ",
+      "error": "ส่งไม่สำเร็จ ลองใหม่หรือส่งอีเมลตรงหาได้เลย",
+      "subjectPrefix": "ข้อความใหม่:"
     },
     "channels": {
+      "title": "ข้อมูลติดต่อ",
       "email": "อีเมล",
       "phone": "โทรศัพท์ / WhatsApp",
       "linkedin": "LinkedIn",
       "facebook": "Facebook",
       "instagram": "Instagram"
     },
+    "contactInfo": {
+      "title": "ข้อมูลติดต่อ",
+      "email": "อีเมล",
+      "phone": "โทรศัพท์",
+      "linkedin": "LinkedIn"
+    },
     "callout": {
-      "title": "มาทำงานร่วมกัน",
-      "description": "ฉันเปิดรับเสมอสำหรับการหารือเกี่ยวกับโปรเจ็กต์ใหม่ ไอเดียสร้างสรรค์ หรือโอกาสในการเป็นส่วนหนึ่งของวิสัยทัศน์ของคุณ",
-      "action": "เริ่มการสนทนา"
+      "title": "มาร่วมงานกัน",
+      "description": "เปิดรับการพูดคุยโปรเจ็กต์ใหม่ๆ ไอเดียสร้างสรรค์ และโอกาสเป็นส่วนหนึ่งในวิสัยทัศน์ของคุณเสมอ",
+      "action": "เริ่มพูดคุย"
     }
   },
   "footer": {
     "brand": {
       "name": "Muneer Radwan",
-      "description": "นักพัฒนา Flutter ที่หลงใหลในการสร้างแอปพลิเคชันมือถือที่สวยงามและใช้งานได้"
+      "description": "นักพัฒนา Flutter ที่รักการสร้างแอปมือถือทั้งสวยและใช้งานได้จริง"
     },
     "quickLinks": "ลิงก์ด่วน",
     "connect": "เชื่อมต่อ"
   },
   "common": {
     "loading": "กำลังโหลด...",
-    "error": "ข้อผิดพลาด",
+    "error": "เกิดข้อผิดพลาด",
     "close": "ปิด"
+  },
+  "projectDetails": {
+    "common": {
+      "featuredCaseStudy": "เคสสตูดิโอเด่น",
+      "backToProjects": "กลับไปหน้าผลงาน",
+      "launchPoints": "ลิงก์สำคัญ",
+      "productGallery": "แกลเลอรีหน้าจอ",
+      "screensStory": "หน้าจอที่เล่าเรื่องราว",
+      "tapToOpen": "แตะหน้าจอใดก็ได้เพื่อเปิดแกลเลอรี",
+      "userEntryStory": "เส้นทางผู้ใช้",
+      "fromLandingToDashboards": "จาก landing สู่ dashboard ตามบทบาท",
+      "roleCapabilities": "ขีดความสามารถของแต่ละบทบาท",
+      "governanceForPersonas": "ระบบกำกับสำหรับแต่ละ persona",
+      "applicationFlow": "ลำดับงานของแอป",
+      "systemGuardrails": "มาตรการป้องกัน",
+      "technologies": "เทคโนโลยี",
+      "architecture": "สถาปัตยกรรม",
+      "experience": "ประสบการณ์",
+      "experienceSystems": "ระบบประสบการณ์",
+      "visitWebsite": "เยี่ยมชมเว็บไซต์",
+      "downloadApp": "ดาวน์โหลดแอป"
+    },
+    "medtour": {
+      "title": "MedTour.sy",
+      "tagline": "OS ด้านการท่องเที่ยวเชิงการแพทย์สำหรับผู้ป่วย พาร์ตเนอร์ และผู้ประสานงาน",
+      "industry": "Medical Tourism / Marketplace",
+      "description": "MedTour.sy นำเสนอประสบการณ์ landing ระดับพรีเมียม เล่าเรื่องแบรนด์ บริการ โลจิสติกส์ และ CTA ที่เชื่อมผู้เยี่ยมชมเข้าหาผู้ประสานงานได้ทันที",
+      "metrics": {
+        "userRoles": "บทบาทผู้ใช้",
+        "userRolesValue": "5 persona",
+        "languages": "ภาษา",
+        "languagesValue": "11 ภาษา",
+        "platforms": "แพลตฟอร์ม",
+        "platformsValue": "iOS · Android"
+      },
+      "deliverables": {
+        "0": "ประสบการณ์ landing เชิงการตลาด",
+        "1": "แอปมือถือ/เว็บที่แยกตามบทบาท",
+        "2": "คอนโซลแอดมินและระบบกำกับ"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "โจทย์",
+            "body": "ผู้ป่วยต่างชาติอยากได้จุดหมายเดียวที่ไว้ใจได้ในการหาข้อมูลการรักษา โรงพยาบาล และส่งต่อโลจิสติกส์ให้ผู้ประสานงานได้อย่างราบรื่น"
+          },
+          "solution": {
+            "title": "ทางแก้",
+            "body": "สร้างแพลตฟอร์ม Flutter ที่มี onboarding แบบมีไกด์ ตรวจสอบพาร์ตเนอร์ และ workspace ที่รู้จักบทบาท ทำให้แอดมิน ศูนย์แพทย์ โรงแรม หมอ และนักท่องเที่ยวทำงานสอดประสาน"
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "เส้นทางก่อนเดินทาง",
+            "description": "เนื้อหา hero, บล็อกบริการ, รีวิว ชวนผู้ใช้กด CTA “Get Started” เชื่อมตรงถึงผู้ประสานงาน"
+          },
+          "1": {
+            "title": "สองฟังก์ชันลงทะเบียน",
+            "description": "ลูกค้าเจอแบบฟอร์มเบาๆ ส่วนพาร์ตเนอร์จะต้องผ่านขั้นตรวจสอบใบอนุญาตและ OTP สองขั้นตอน"
+          },
+          "2": {
+            "title": "แดชบอร์ดตามบทบาท",
+            "description": "หลังล็อกอิน ระบบพาไปยัง home screen ที่ออกแบบสำหรับแต่ละบทบาทพร้อมเมนูเฉพาะ"
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Landing → Action",
+            "steps": {
+              "0": "Hero, services, how-it-works และ CTA สร้างความเชื่อใจ",
+              "1": "ผู้ใช้เลือกเส้นทางลูกค้าหรือพาร์ตเนอร์"
+            }
+          },
+          "1": {
+            "title": "ลงทะเบียนและยืนยัน",
+            "steps": {
+              "0": "ลูกค้ากรอกข้อมูลส่วนตัวและเข้าหน้า feed ทันที",
+              "1": "พาร์ตเนอร์กรอกข้อมูลองค์กร เอกสารใบอนุญาต และยืนยันอีเมล OTP ก่อนเปิด workspace"
+            }
+          },
+          "2": {
+            "title": "การยืนยันตัวตนและการนำทาง",
+            "steps": {
+              "0": "ล็อกอินแล้ววิ่งเข้าสู่ dashboard ตามบทบาท",
+              "1": "ถ้ามี token อยู่แล้วจะข้ามหน้า login",
+              "2": "รีเซ็ตรหัสผ่านแยกเป็นการขออีเมลกับฟอร์มรีเซ็ตที่ปลอดภัย"
+            }
+          }
+        },
+        "userRoles": {
+          "admin": {
+            "name": "แอดมิน",
+            "summary": "ควบคุมผู้ใช้ สิทธิ์ และคอนเทนต์ทั้งหมด",
+            "capabilities": {
+              "0": "แดชบอร์ด multi-platform พร้อม KPI สด",
+              "1": "ดูแลวงจรชีวิตผู้ใช้ บทบาท และสิทธิ์",
+              "2": "จัดคิวคำสั่ง/คำขอ พร้อมสถานะและเครื่องมือ audit"
+            }
+          },
+          "centerOwner": {
+            "name": "เจ้าของศูนย์",
+            "summary": "บริหารคลินิก หมอ แผนก และบริการ",
+            "capabilities": {
+              "0": "สร้างโปรไฟล์ศูนย์ แกลเลอรี และเวลาเปิดปิด",
+              "1": "จัดการ catalog หมอ แผนก บริการ และอุปกรณ์",
+              "2": "ตั้งตารางอีเวนต์และเข้าถึง insight"
+            }
+          },
+          "hotelOwner": {
+            "name": "เจ้าของโรงแรม",
+            "summary": "ดูแล inventory การพักที่เชื่อมโยงการเดินทางรักษา",
+            "capabilities": {
+              "0": "โปรไฟล์โรงแรมพร้อมหลักฐานใบอนุญาตและควบคุมสิ่งอำนวยความสะดวก",
+              "1": "เทมเพลตรูม ประกาศราคา และจัดการจำนวนห้อง",
+              "2": "วางแผนอีเวนต์และสื่อสารกับคอนเซียร์จ"
+            }
+          },
+          "doctor": {
+            "name": "แพทย์",
+            "summary": "อัปเดตโปรไฟล์และตารางเวลาอยู่เสมอ",
+            "capabilities": {
+              "0": "แก้ไขโปรไฟล์พร้อม metadata ของความเชี่ยวชาญ",
+              "1": "จัดการบล็อกเวลา ช่องนัด และช่วงเวลาว่าง",
+              "2": "เห็นศูนย์ที่สังกัดและเชื่อมกับ messaging"
+            }
+          },
+          "customer": {
+            "name": "ลูกค้า",
+            "summary": "สำรวจบริการและจัดการโลจิสติกส์ทริป",
+            "capabilities": {
+              "0": "ค้นหาศูนย์ โรงแรม หมอ และคลังอุปกรณ์",
+              "1": "สร้างคำขอเกี่ยวกับการรักษา/ที่พัก/อุปกรณ์ พร้อมติดตามสถานะ",
+              "2": "เตรียมช่องสำหรับจองเที่ยวบินและการเดินทางในอนาคต"
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Flow การยืนยันตัวตน",
+            "steps": {
+              "0": "Landing → CTA → ลงทะเบียน (ลูกค้าหรือพาร์ตเนอร์) → ยืนยัน → เข้าสู่ dashboard",
+              "1": "ถ้ามี session อยู่แล้วจะพาเข้าหน้าหลักทันที"
+            }
+          },
+          "1": {
+            "title": "การนำทางตามบทบาท",
+            "steps": {
+              "0": "แต่ละบทบาทมีเมนู navigation ที่กำหนดขอบเขตไว้",
+              "1": "guard ตรวจว่าแสดงฟีเจอร์ที่ตรงกับ permission เท่านั้น"
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "โครงสร้างโฟลเดอร์แบบ feature-first (ADMIN, AUTH, OWNER, DOCTOR, USER, PUBLIC)",
+            "1": "State management ด้วย BLoC/Cubit + DI ผ่าน GetIt",
+            "2": "เลเยอร์เครือข่ายด้วย Dio พร้อม interceptor และ route แบบ strongly typed",
+            "3": "คอมโพเนนต์และยูทิลร่วมที่ใช้ซ้ำได้"
+          },
+          "experience": {
+            "0": "รองรับ 11 ภาษา",
+            "1": "ธีมสว่าง/มืดที่คุมด้วย design token กลาง",
+            "2": "แคชและ session persistence ผ่าน SharedPreferences",
+            "3": "Routing guard ที่รู้จักบทบาทและ tag สิทธิ์",
+            "4": "จัดการสื่อคุณภาพสูงด้วยการอัปโหลด แกลเลอรี และ PhotoView"
+          }
+        }
+      }
+    },
+    "ovacs": {
+      "title": "OVACS Mobile Suite",
+      "tagline": "ศูนย์บัญชาการสำหรับ coordinator, case manager และ clinician",
+      "industry": "ระบบจัดการคดี ลูกค้า เซสชัน และเอกสาร",
+      "description": "OVACS เป็น workspace บน Flutter สำหรับทีมดูแลที่ถูกกำกับ ช่วยรวม onboarding, dashboard, clients, cases, sessions, documents, messaging และ compliance ไว้ที่เดียว",
+      "metrics": {
+        "coreModules": "โมดูลหลัก",
+        "coreModulesValue": "10+",
+        "channels": "ช่องทาง",
+        "channelsValue": "Push · Email · SMS",
+        "platforms": "แพลตฟอร์ม",
+        "platformsValue": "iOS · Android · Tablet"
+      },
+      "deliverables": {
+        "0": "ชุด mobile ที่เข้าใจบทบาท",
+        "1": "workspace CRUD ที่รีใช้ได้",
+        "2": "เอกสาร QA + Compliance"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "โจทย์",
+            "body": "ทีมดูแลใช้หลายเครื่องมือสำหรับ client/case/message/compliance ทำให้เสียเวลา สับสน และ onboarding ช้า"
+          },
+          "solution": {
+            "title": "ทางแก้",
+            "body": "ออกแบบ OVACS เป็น Flutter suite ที่มี navigation ร่วม, CRUD pattern ที่ reusable และ checklist QA เพื่อให้ทุกโมดูลมีพฤติกรรมสอดคล้องและผ่านมาตรฐาน HIPAA"
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "Playbook การใช้ครั้งแรก",
+            "description": "Splash → onboarding carousel → sign-in หลายแบบ (SSO, guest) พร้อม validation เข้ม"
+          },
+          "1": {
+            "title": "แดชบอร์ดที่เล่าเรื่องครบ",
+            "description": "KPI, smart feed, quick search และ FAB ตามบริบทพาเข้าสู่โมดูลที่ถูกต้องพร้อมฟิลเตอร์"
+          },
+          "2": {
+            "title": "ราง CRUD สากล",
+            "description": "ทุกโมดูลยึดโครง list → filter → detail → action เพื่อให้ QA/ผลิตภัณฑ์/วิศวกรพูดภาษาเดียวกัน"
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Splash & Onboarding",
+            "steps": {
+              "0": "Splash โหลด DI, localization, theme token",
+              "1": "เปิดครั้งแรกโชว์ onboarding carousel และขออนุญาตแจ้งเตือน"
+            }
+          },
+          "1": {
+            "title": "ศูนย์รวมการยืนยันตัวตน",
+            "steps": {
+              "0": "รองรับ email/password, SSO card, tenant guest",
+              "1": "ลืมรหัส/สร้างบัญชีแบบหลายขั้นพร้อมการ validate และสั่นเตือนเมื่อผิด"
+            }
+          },
+          "2": {
+            "title": "การจัดการ session",
+            "steps": {
+              "0": "JWT+refresh token เก็บใน secure storage พร้อม biometric",
+              "1": "มี soft logout สำหรับ inactivity และ forced logout เมื่อ token ถูก revoke"
+            }
+          }
+        },
+        "userRoles": {
+          "careCoordinator": {
+            "name": "Care Coordinator",
+            "summary": "ดูแลความสัมพันธ์ การมอบหมาย และการตามงานรายวัน",
+            "capabilities": {
+              "0": "โมดูล Connections พร้อมสถานะว่าง ป้ายความสัมพันธ์ ระดับการ escalate",
+              "1": "wizard onboarding สำหรับลูกค้า, timeline snapshot, quick actions",
+              "2": "Smart feed triage ที่เจาะรายละเอียดเชิงบริบท"
+            }
+          },
+          "caseManager": {
+            "name": "Case Manager",
+            "summary": "ขับเคลื่อนคดี เซสชัน และงานเอกสาร",
+            "capabilities": {
+              "0": "การ์ดคดีแบบ Kanban พร้อม objective, template, audit",
+              "1": "Scheduling เซสชันที่ตั้งซ้ำ เตือน และติดตาม consent",
+              "2": "Document repository ที่มี label, retention, signature workflow"
+            }
+          },
+          "clinician": {
+            "name": "Clinician",
+            "summary": "ให้บริการ พูดคุย และรักษาข้อมูลความปลอดภัยส่วนตัวให้ทันสมัย",
+            "capabilities": {
+              "0": "กล่องจดหมายรวมสำหรับสนทนาส่วนตัว กลุ่ม และประกาศ",
+              "1": "โปรไฟล์และสถานะพร้อมระบบตาม credential",
+              "2": "ศูนย์ความปลอดภัยสำหรับ biometric, session, password rotation"
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "แดชบอร์ดเล่าเรื่อง",
+            "steps": {
+              "0": "ตัวเลือกองค์กร การแจ้งเตือน และ avatar อยู่บนแถบบน",
+              "1": "KPI cards ลิงก์ลึกพร้อมฟิลเตอร์; smart feed timeline ทำให้ทีมเดินจังหวะเดียวกัน",
+              "2": "FAB ปรับตามบริบท (client, case, session, document)"
+            }
+          },
+          "1": {
+            "title": "สัญญา CRUD ของแต่ละโมดูล",
+            "steps": {
+              "0": "ทุกฟีเจอร์มี list view พร้อม search+filter+empty state",
+              "1": "หน้ารายละเอียดโชว์ metadata, entity ที่เกี่ยวข้อง, quick action",
+              "2": "กระบวนการเพิ่ม/แก้/ลบ เคารพ dependency, retention rule, undo/snackbar"
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "Flutter 3.x workspace แยกโมดูลใน lib/features/*",
+            "1": "State management ด้วย Riverpod + Cubit และ shared widget ใน lib/core",
+            "2": "เครือข่าย Dio พร้อมโมเดล JSON serializable และ service locator",
+            "3": "Secure storage เก็บ token + hook กับ Firebase Messaging"
+          },
+          "experience": {
+            "0": "รองรับภาษาอาหรับ/อังกฤษ และโหมด RTL",
+            "1": "โหมดออฟไลน์ที่แคช list และคิว action",
+            "2": "ฟีเจอร์ accessibility เช่น ขยายฟอนต์, screen reader label, ธีม high-contrast",
+            "3": "บันทึก event add/edit/delete ให้ audit ได้"
+          }
+        }
+      }
+    },
+    "autolakta": {
+      "title": "AutoLakta",
+      "tagline": "ตลาดรถสำหรับผู้ซื้อ ผู้ขาย และผู้ดูแลระบบ",
+      "industry": "Automotive Marketplace / Mobility Commerce",
+      "description": "AutoLakta รวมผู้ซื้อรถ ผู้ขายเชิงธุรกิจ ผู้ลงโฆษณา และแอดมินเข้าไว้ในประสบการณ์ Flutter หลายภาษา ที่ผสมผสานการค้นหา catalog เครื่องมือร้านค้า และคอนโซลกำกับดูแล",
+      "metrics": {
+        "personas": "persona",
+        "personasValue": "4 บทบาท",
+        "locales": "ภาษา",
+        "localesValue": "5 ภาษา",
+        "platforms": "แพลตฟอร์ม",
+        "platformsValue": "iOS · Android · Web"
+      },
+      "deliverables": {
+        "0": "Marketplace พร้อม advanced search",
+        "1": "หน้า storefront และเครื่องมือโฆษณาสำหรับผู้ขาย",
+        "2": "แดชบอร์ดควบคุมของแอดมิน"
+      },
+      "caseStudy": {
+        "summary": {
+          "challenge": {
+            "title": "โจทย์",
+            "body": "ดีลเลอร์/ผู้ลงโฆษณา/แอดมินต้องใช้เครื่องมือแยกกัน ขณะที่ผู้ซื้ออยากได้ประสบการณ์มือถือสมัยใหม่พร้อมฟิลเตอร์และข้อมูลโปร่งใส"
+          },
+          "solution": {
+            "title": "ทางแก้",
+            "body": "ปล่อย AutoLakta เป็น workspace Flutter แบบ feature-first ที่มี onboarding, discovery, dashboard ของผู้ขาย, flow ของผู้ลงโฆษณา และโมดูล admin ด้วย GetX, Dio และ local persistence"
+          }
+        },
+        "highlights": {
+          "0": {
+            "title": "Onboarding & Authentication ที่มีไกด์",
+            "description": "มี splash, onboarding, ยืนยัน email/phone, JWT session, GetStorage persistence และ UI พร้อม OAuth"
+          },
+          "1": {
+            "title": "Advanced Catalog Discovery",
+            "description": "ค้นหา/คัดกรองตามแบรนด์ รุ่น ระบบขับเคลื่อน เกียร์ ราคา หมวดหมู่ พร้อมตัวนับสด ชิปถอดได้ และ empty state ที่แข็งแรง"
+          },
+          "2": {
+            "title": "ชุดเครื่องมือผู้ขาย & แอดมิน",
+            "description": "โปรไฟล์ธุรกิจ, dashboard ผู้ขาย, ตัวแก้ไขโฆษณา และคอนโซล CRUD สำหรับ brand/fuel/transmission/account"
+          }
+        },
+        "userJourney": {
+          "0": {
+            "title": "Onboarding & Setup",
+            "steps": {
+              "0": "ลำดับ splash และ onboarding แนะนำเรื่องราวแบรนด์",
+              "1": "ยืนยันตัวด้วยโทรศัพท์/อีเมล มี JWT session และข้อความหลังยืนยัน"
+            }
+          },
+          "1": {
+            "title": "Discover & Shortlist",
+            "steps": {
+              "0": "Hero หน้าแรกโชว์รถเด่น ไฮไลต์ธุรกิจ และโปรโมชัน",
+              "1": "ฟิลเตอร์ขั้นสูงและ wishlist ช่วยคัดรถและย้อนกลับมาดู"
+            }
+          },
+          "2": {
+            "title": "Operate & Govern",
+            "steps": {
+              "0": "ผู้ขายอัปเดตหน้าร้าน บริหารสต็อก และปล่อยโปรโมชัน",
+              "1": "แอดมินตรวจและอนุมัติรายการ แบรนด์/รุ่น และดูแลคุณภาพข้อมูล"
+            }
+          }
+        },
+        "userRoles": {
+          "carShopper": {
+            "name": "ผู้ซื้อรถ",
+            "summary": "สำรวจ inventory เก็บรายการโปรด และขอติดต่อตามภายหลัง",
+            "capabilities": {
+              "0": "ค้นหาและเทียบรถหลายหมวด",
+              "1": "จัดการ wish list พร้อมแจ้งเตือนโปรโม",
+              "2": "หน้า detail ที่เต็มไปด้วยสเปก รูป และรีวิว"
+            }
+          },
+          "businessSeller": {
+            "name": "ผู้ขายเชิงธุรกิจ",
+            "summary": "ดูแล storefront รายการสินค้า และกลยุทธ์ราคา",
+            "capabilities": {
+              "0": "แก้ไขโปรไฟล์พร้อมสื่อ พิกัด และข้อมูลติดต่อ",
+              "1": "สร้าง/แก้โฆษณาพร้อมอัปโหลดสื่อและตั้งราคา",
+              "2": "แดชบอร์ดสต็อกที่สั่งโพสต์/พักขายได้ทันที"
+            }
+          },
+          "advertiser": {
+            "name": "ผู้ลงโฆษณา",
+            "summary": "โปรโมตแคมเปญและติดตาม performance",
+            "capabilities": {
+              "0": "จัดการ promotion, banner, highlight",
+              "1": "การ์ด insight ที่รายงาน impression, lead, engagement",
+              "2": "workflow ร่วมกับผู้ดูแลแพลตฟอร์ม"
+            }
+          },
+          "platformAdmin": {
+            "name": "ผู้ดูแลแพลตฟอร์ม",
+            "summary": "คุมความถูกต้องของคาตาล็อกและสิทธิ์ผู้ใช้",
+            "capabilities": {
+              "0": "คอนโซล CRUD สำหรับ brand, model, fuel, transmission",
+              "1": "ตรวจสอบและจัดการ life cycle ผู้ลงโฆษณา",
+              "2": "แดชบอร์ด monitor สำหรับ offline state, error, ticket"
+            }
+          }
+        },
+        "flow": {
+          "0": {
+            "title": "Onboarding & Setup",
+            "steps": {
+              "0": "ลำดับ splash และ onboarding แนะนำเรื่องราวแบรนด์",
+              "1": "ยืนยันตัวด้วยโทรศัพท์/อีเมล มี JWT session และข้อความหลังยืนยัน"
+            }
+          },
+          "1": {
+            "title": "Discover & Shortlist",
+            "steps": {
+              "0": "Hero หน้าแรกโชว์รถเด่น ไฮไลต์ธุรกิจ และโปรโมชัน",
+              "1": "ฟิลเตอร์ขั้นสูงและ wishlist ช่วยคัดรถและย้อนกลับมาดู"
+            }
+          },
+          "2": {
+            "title": "Operate & Govern",
+            "steps": {
+              "0": "ผู้ขายอัปเดตหน้าร้าน บริหารสต็อก และปล่อยโปรโมชัน",
+              "1": "แอดมินตรวจและอนุมัติรายการ แบรนด์/รุ่น และดูแลคุณภาพข้อมูล"
+            }
+          }
+        },
+        "technical": {
+          "architecture": {
+            "0": "โครงสร้างโดเมน Auth, Home, Search, Store, Admin, Seller, Wishlist, Settings",
+            "1": "GetX controller จัดการ navigation, DI, reactive state",
+            "2": "Dio client พร้อม interceptor, repository layer, JWT parsing",
+            "3": "คอมโพเนนต์ร่วม theme token และ binding สำหรับ reuse UI"
+          },
+          "experience": {
+            "0": "ฟอนต์ Cairo + การแปลสองภาษาโดย GetX",
+            "1": "ธีมสว่าง/มืดที่สลับ runtime",
+            "2": "ตัวมอนิเตอร์สัญญาณ shimmer + snackbar + loader ให้ feedback เดียวกัน",
+            "3": "Image picker + cropper ช่วยให้ผู้ขายอัปโหลดสื่อคุณภาพสูง"
+          }
+        }
+      }
+    }
   }
 }
-
