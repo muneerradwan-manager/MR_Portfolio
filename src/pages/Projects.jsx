@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import { projects } from "../data/projects";
@@ -7,6 +8,8 @@ import LinkIcon from "../components/LinkIcon";
 
 const Projects = () => {
   const { t } = useTranslation();
+  const [expandedDescriptions, setExpandedDescriptions] = useState({});
+  const [expandedTechnologies, setExpandedTechnologies] = useState({});
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -86,20 +89,55 @@ const Projects = () => {
                     <h3 className="text-2xl font-bold mb-3 text-gray-900 dark:text-gray-100">
                       {t(`projectDetails.${project.slug}.title`, project.title)}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 flex-1">
-                      {t(`projectDetails.${project.slug}.description`, project.description)}
-                    </p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-xs font-medium"
+                    
+                    {/* Description with Read More */}
+                    <div className="mb-4 flex-1">
+                      <p 
+                        className={`text-gray-600 dark:text-gray-300 ${
+                          !expandedDescriptions[project.id] ? 'line-clamp-6' : ''
+                        }`}
+                      >
+                        {t(`projectDetails.${project.slug}.description`, project.description)}
+                      </p>
+                      {project.description && (
+                        <button
+                          onClick={() => setExpandedDescriptions(prev => ({
+                            ...prev,
+                            [project.id]: !prev[project.id]
+                          }))}
+                          className="mt-2 text-primary-600 dark:text-primary-400 hover:underline text-sm font-medium"
                         >
-                          {tech}
-                        </span>
-                      ))}
+                          {expandedDescriptions[project.id] ? 'Read Less' : 'Read More'}
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Technologies with Preview All */}
+                    <div className="mb-4">
+                      <div className="flex flex-wrap gap-2">
+                        {(expandedTechnologies[project.id] 
+                          ? project.technologies 
+                          : project.technologies.slice(0, 7)
+                        ).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-3 py-1 bg-primary-100 dark:bg-primary-800/50 text-primary-700 dark:text-primary rounded-full text-xs font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                      {project.technologies.length > 7 && (
+                        <button
+                          onClick={() => setExpandedTechnologies(prev => ({
+                            ...prev,
+                            [project.id]: !prev[project.id]
+                          }))}
+                          className="mt-2 text-primary-600 dark:text-primary-400 hover:underline text-sm font-medium"
+                        >
+                          {expandedTechnologies[project.id] ? 'Show Less' : 'Preview All'}
+                        </button>
+                      )}
                     </div>
 
                     {/* Action Buttons */}

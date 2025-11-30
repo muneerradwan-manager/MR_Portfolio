@@ -80,7 +80,7 @@ const Home = () => {
 
             <motion.div variants={itemVariants} className="mb-8">
               <motion.div
-                className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold"
+                className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-800/50 text-primary-700 dark:text-primary text-sm font-semibold"
                 whileHover={{ scale: 1.05 }}
               >
                 {t('home.hero.badge')}
@@ -96,13 +96,14 @@ const Home = () => {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+              className="flex justify-center items-center"
             >
-              <Button to="/projects" variant="primary" className="text-base px-8 py-4">
-                {t('home.hero.primaryCta')}
-              </Button>
-              <Button to="/contact" variant="outline" className="text-base px-8 py-4">
-                {t('home.hero.secondaryCta')}
+              <Button 
+                href="https://drive.google.com/drive/folders/1jetr6SgWuY7Jyk32FPy6z-bKGpldGNn6?usp=sharing" 
+                variant="primary" 
+                className="text-base px-8 py-4"
+              >
+                Download My CV
               </Button>
             </motion.div>
           </motion.div>

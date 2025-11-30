@@ -453,7 +453,13 @@ export const projects = [
       icon: null,
     },
     screenshots: [],
-    links: [],
+    links: [
+      {
+        label: "Google Drive",
+        type: "drive",
+        href: "https://drive.google.com/drive/folders/1jN8eMMYTsogsjgYFQBeOy2ifzBf6F3Bv?usp=sharing",
+      },
+    ],
     metrics: [
       {
         labelKey: "personas",
@@ -784,8 +790,5 @@ export const projects = [
       },
     },
     featured: true,
-
-
-    
   },
 ];
