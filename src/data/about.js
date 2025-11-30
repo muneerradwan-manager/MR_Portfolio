@@ -31,12 +31,12 @@ export const aboutData = {
   contact: [
     {
       label: "Email",
-      value: "muneer.radwan.manager@gmail.com",
+      value: "muneer.radwan.manager@gmail.com, firebase.projects.1997@gmail.com",
       href: "mailto:muneer.radwan.manager@gmail.com",
     },
     {
       label: "Phone",
-      value: "+963-947446326",
+      value: "+963-947446326, +963-937835199",
       href: "tel:+963947446326",
     },
     {
