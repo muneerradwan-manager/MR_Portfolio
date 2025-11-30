@@ -67,7 +67,8 @@ The stack enforces separation of concerns: views trigger controllers, controller
 
 - All copy resides in /src/i18n/locales with runtime language switching.
 - **8 locales bundled:** **English, Arabic, Persian, Japanese, Korean, Russian, Thai, Turkish**.
-- RTL languages leverage Cairo fonts, logical spacing (gap-*, 	ext-start), and direction-aware icons (tl:rotate-180).
+- RTL languages leverage Cairo fonts, logical spacing (gap-*, 	ext-start), and direction-aware icons (
+tl:rotate-180).
 - Validation, empty states, offline banners, and error toasts are localized to keep UX consistent worldwide.
 
 ---
@@ -134,7 +135,7 @@ The stack enforces separation of concerns: views trigger controllers, controller
 ## 📬 Contact
 
 | ช่องทาง | รายละเอียด |
-| --- | --- |
+| --- | --muneer.radwan.manager
 | Email | firebase.projects.1997@gmail.com |
 | Phone / WhatsApp | +963-947-446-326 |
 | LinkedIn | [linkedin.com/in/muneer-radwan-3b7543352](https://www.linkedin.com/in/muneer-radwan-3b7543352) |

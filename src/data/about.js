@@ -31,8 +31,8 @@ export const aboutData = {
   contact: [
     {
       label: "Email",
-      value: "firebase.projects.1997@gmail.com",
-      href: "mailto:firebase.projects.1997@gmail.com",
+      value: "muneer.radwan.manager@gmail.com",
+      href: "mailto:muneer.radwan.manager@gmail.com",
     },
     {
       label: "Phone",

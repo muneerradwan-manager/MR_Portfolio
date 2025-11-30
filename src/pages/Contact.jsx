@@ -33,50 +33,89 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Check if EmailJS is configured
+    // Try Web3Forms first (free, no signup needed)
+    if (form.web3forms?.accessKey && form.web3forms.accessKey !== 'YOUR_ACCESS_KEY') {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: form.web3forms.accessKey,
+            subject: `${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`,
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+            to_email: form.recipient,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setSubmitStatus('success');
+          setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setSubmitStatus(null), 5000);
+          setIsSubmitting(false);
+          return;
+        } else {
+          throw new Error(result.message || 'Failed to send message');
+        }
+      } catch (error) {
+        console.error('Web3Forms Error:', error);
+        // Fall through to try EmailJS or mailto
+      }
+    }
+
+    // Try EmailJS if configured
     if (
-      form.emailjs.serviceId === 'YOUR_SERVICE_ID' ||
-      form.emailjs.templateId === 'YOUR_TEMPLATE_ID' ||
-      form.emailjs.publicKey === 'YOUR_PUBLIC_KEY'
+      form.emailjs?.serviceId &&
+      form.emailjs?.templateId &&
+      form.emailjs?.publicKey &&
+      form.emailjs.serviceId !== 'YOUR_SERVICE_ID' &&
+      form.emailjs.templateId !== 'YOUR_TEMPLATE_ID' &&
+      form.emailjs.publicKey !== 'YOUR_PUBLIC_KEY'
     ) {
-      // Fallback to mailto if EmailJS is not configured
-      const subject = encodeURIComponent(`${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-      );
-      window.location.href = `mailto:${form.recipient}?subject=${subject}&body=${body}`;
-      setIsSubmitting(false);
-      return;
+      try {
+        // Initialize EmailJS with public key
+        emailjs.init(form.emailjs.publicKey);
+
+        // Send email using EmailJS
+        await emailjs.send(
+          form.emailjs.serviceId,
+          form.emailjs.templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            message: formData.message,
+            to_email: form.recipient,
+            subject: `${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`,
+          },
+        );
+
+        // Success
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setSubmitStatus(null), 5000);
+        setIsSubmitting(false);
+        return;
+      } catch (error) {
+        console.error('EmailJS Error:', error);
+        // Fall through to mailto fallback
+      }
     }
 
-    try {
-      // Initialize EmailJS with public key
-      emailjs.init(form.emailjs.publicKey);
-
-      // Send email using EmailJS
-      await emailjs.send(
-        form.emailjs.serviceId,
-        form.emailjs.templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: form.recipient,
-          subject: `${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`,
-        },
-      );
-
-      // Success
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      setTimeout(() => setSubmitStatus(null), 5000);
-    } catch (error) {
-      console.error('EmailJS Error:', error);
-      setSubmitStatus('error');
-      setTimeout(() => setSubmitStatus(null), 5000);
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Fallback to mailto if no service is configured
+    const subject = encodeURIComponent(`${t('contact.form.subjectPrefix', 'New message from')} ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
+    );
+    window.location.href = `mailto:${form.recipient}?subject=${subject}&body=${body}`;
+    setIsSubmitting(false);
+    setSubmitStatus('error');
+    setTimeout(() => setSubmitStatus(null), 3000);
   };
 
   return (

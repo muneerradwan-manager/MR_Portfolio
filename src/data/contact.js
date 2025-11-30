@@ -6,9 +6,14 @@ export const contactContent = {
   intro:
     'Feel free to reach out through any of these channels. I typically respond within 24 hours.',
   form: {
-    recipient: 'firebase.projects.1997@gmail.com',
+    recipient: 'muneer.radwan.manager@gmail.com',
     subjectPrefix: 'New message from',
     submitLabel: 'Send Message',
+    // Web3Forms Configuration - Get your access key from https://web3forms.com/
+    // It's free and requires no signup - just visit the site and get your key
+    web3forms: {
+      accessKey: 'YOUR_ACCESS_KEY', // Get from https://web3forms.com/ (free, no signup needed)
+    },
     // EmailJS Configuration - Get these from https://www.emailjs.com/
     emailjs: {
       serviceId: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
@@ -20,20 +25,14 @@ export const contactContent = {
     {
       type: 'email',
       label: 'Email',
-      value: 'firebase.projects.1997@gmail.com',
-      href: 'mailto:firebase.projects.1997@gmail.com',
+      value: 'muneer.radwan.manager@gmail.com',
+      href: 'mailto:muneer.radwan.manager@gmail.com',
     },
     {
       type: 'phone',
       label: 'Phone / WhatsApp',
       value: '+963-947446326',
       href: 'https://wa.me/963947446326',
-    },
-    {
-      type: 'linkedin',
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/muneer-radwan-3b7543352',
-      href: 'https://www.linkedin.com/in/muneer-radwan-3b7543352',
     },
     {
       type: 'facebook',
