@@ -51,7 +51,7 @@ export const contactContent = {
       "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
     action: {
       label: 'Start a Conversation',
-      href: 'https://wa.me/963947446326',
+      href: 'https://wa.me/963937835199',
     },
   },
 };
