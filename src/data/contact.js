@@ -9,16 +9,14 @@ export const contactContent = {
     recipient: 'muneer.radwan.manager@gmail.com',
     subjectPrefix: 'New message from',
     submitLabel: 'Send Message',
-    // Web3Forms Configuration - Get your access key from https://web3forms.com/
-    // It's free and requires no signup - just visit the site and get your key
     web3forms: {
-      accessKey: 'YOUR_ACCESS_KEY', // Get from https://web3forms.com/ (free, no signup needed)
+      accessKey: '8244f2f5-0d1f-41ff-b024-cb5ab79f0615', // Get from https://web3forms.com/ (free, no signup needed)
     },
     // EmailJS Configuration - Get these from https://www.emailjs.com/
     emailjs: {
-      serviceId: 'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      templateId: 'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-      publicKey: 'YOUR_PUBLIC_KEY', // Replace with your EmailJS public key
+      serviceId: 'service_0v7v36a', 
+      templateId: 'template_gahcklb', 
+      publicKey: 'FGjlJMxIiGgf7iPKj74cA', 
     },
   },
   channels: [
